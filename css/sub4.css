@@ -1,0 +1,351 @@
+@charset "UTF-8";
+
+.sub_title{
+  max-width: 1320px;
+  height: 66px;
+  border: 2px solid #319EA3;
+  margin: 130px auto 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #319EA3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 섹션1 */
+.sub4 .section_wrap .section .section1{
+  margin: 0 auto;
+  width: 1320px;
+  height: 1020px;
+}
+.sub4 .section_wrap .section .section1 .section_box{
+  width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 섹션2 */
+.sub4 .section_wrap .section .section2{
+  margin: 0 auto;
+  width: 1320px;
+  height: 930px;
+}
+.sub4 .section_wrap .section .section2 .section_box{
+  width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub4 .sub3_titlebox{
+  display: flex;
+  width: 650px;
+  height: 90px;
+  margin-bottom: 90px;
+}
+.sub4 .sub3_section_line{
+  width: 1px;
+  height: 89px;
+  background: #a5a5a5;
+}
+
+.sub4 .sub3_sbox{
+  width: 650px;
+  margin-top: 50px;
+}
+.sub4 .sub3_sbox_title{
+  width: 654px;
+  height: 40px;
+  background: #319EA3;
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+}
+.sub4 .sub3_sbox_section{
+  font-size: 16px;
+  width: 654px;
+  color: #5E5E5E;
+  line-height: 180%;
+  margin-top: 30px;
+  letter-spacing: -1px;
+}
+
+.sub4 .sub3_img{
+  width: 448px;
+  height: 596px;
+  margin-top: 180px;
+}
+
+.sub4 .section_wrap {
+  margin-top: 130px;
+}
+
+.sub4 .footer_back {
+  margin-top: 130px;
+}
+
+/* =========================================
+   SUB4 RESPONSIVE (sub3 방식으로 적용)
+   ✅ sub4.css 맨~~~ 아래에 붙여넣기
+========================================= */
+
+/* 0) 기본: 고정폭/고정높이 풀기 (반응형의 핵심) */
+.sub4 .section_wrap .section .section1,
+.sub4 .section_wrap .section .section2{
+  width: 100% !important;
+  max-width: 1320px !important;
+  height: auto !important;          /* ✅ 1020/930 고정 제거 */
+  margin: 0 auto !important;
+  padding: 0 30px !important;       /* ✅ 좌우 여백 */
+  box-sizing: border-box !important;
+}
+
+.sub4 .section_wrap .section .section1 .section_box,
+.sub4 .section_wrap .section .section2 .section_box{
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 40px !important;
+  box-sizing: border-box !important;
+}
+
+/* 텍스트 영역(왼쪽) / 이미지 영역(오른쪽) */
+.sub4 .sub4_leftbox{
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+
+.sub4 .sub4_rightbox{
+  flex: 0 0 448px !important;       /* PC에서 이미지 폭 기준 */
+}
+
+/* 이미지 */
+.sub4 .sub3_img{
+  width: 100% !important;           /* ✅ 448 고정 대신 부모에 맞춤 */
+  height: auto !important;
+  margin-top: 180px;                /* PC 느낌 유지(필요하면 조절) */
+}
+.sub4 .sub3_img img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 타이틀(라인+텍스트) 고정폭 제거 */
+.sub4 .sub3_titlebox{
+  width: 100% !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 90px;
+}
+
+/* 서브 설명 박스(650/654 고정 제거) */
+.sub4 .sub3_sbox,
+.sub4 .sub3_sbox_title,
+.sub4 .sub3_sbox_section{
+  width: 100% !important;
+  max-width: 654px;                 /* PC에서 너무 넓어지면 제한 */
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   1) 1320px 이하: 2컬럼 → 1컬럼(세로 스택)
+========================================= */
+@media (max-width: 1320px){
+
+  .sub4 .section_wrap .section .section1 .section_box,
+  .sub4 .section_wrap .section .section2 .section_box{
+    flex-direction: column !important;
+    align-items: center !important;       /* ✅ 덩어리 가운데 */
+    gap: 40px !important;
+  }
+
+  .sub4 .sub4_leftbox{
+    width: 100% !important;
+  }
+
+  .sub4 .sub4_rightbox{
+    width: 100% !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+    flex: none !important;
+  }
+
+  /* 스택되면 이미지 위쪽 여백 과해져서 줄이기 */
+  .sub4 .sub3_img{
+    margin-top: 30px !important;
+  }
+
+  /* 타이틀 간격/자간 모바일스러운 값으로 완화 */
+  .sub4 .sub3_titlebox{
+    margin: 0 0 40px !important;
+    gap: 24px !important;
+  }
+
+  /* 설명 박스 폭도 화면에 맞추기 */
+  .sub4 .sub3_sbox,
+  .sub4 .sub3_sbox_title,
+  .sub4 .sub3_sbox_section{
+    max-width: 900px !important;
+  }
+}
+
+
+/* =========================================
+   2) 모바일(480px 이하): 폰트/높이 조금 더 줄이기
+========================================= */
+@media (max-width: 480px){
+
+  .sub4 .section_wrap .section .section1,
+  .sub4 .section_wrap .section .section2{
+    padding: 0 24px !important;
+  }
+}
+
+/* ✅ sub4 이미지 영역을 sub3처럼 본문 기준으로 축소 */
+
+.sub4 .sub3_img{
+  width: 100% !important;
+  max-width: 420px !important;   /* sub3 느낌 크기 */
+  height: auto !important;
+  margin-top: 0 !important;
+}
+
+.sub4 .sub3_img img{
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* 오른쪽 박스도 본문 폭에 맞춤 */
+
+.sub4 .sub3_rightbox{
+  flex: 0 0 420px !important;
+  max-width: 420px !important;
+}
+
+/* =========================================
+   SUB4 = SUB3 동일 구조 통일
+========================================= */
+
+/* 공통 section_box 구조 */
+.sub4 .section_box{
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* 왼쪽 텍스트 */
+.sub4 .sub3_leftbox{
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* 오른쪽 이미지 */
+.sub4 .sub3_rightbox{
+  flex: 0 0 420px;
+}
+
+/* 이미지 */
+.sub4 .sub3_img img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* 제목 구조 통일 */
+.sub4 .sub3_titlebox{
+  width:100%;
+  height:auto;
+  margin-bottom:40px;
+
+  display:flex;
+  align-items:center;
+}
+
+/* 텍스트 박스 */
+.sub4 .sub3_sbox,
+.sub4 .sub3_sbox_title,
+.sub4 .sub3_sbox_section{
+  width:100%;
+  max-width:none;
+  box-sizing:border-box;
+}
+
+
+/* =========================================
+   1320px 이하 → sub3와 동일 반응형
+========================================= */
+
+@media (max-width:1320px){
+
+  .sub4 .section_box{
+
+    flex-direction:column;
+    align-items:center;
+
+    max-width:900px;
+    padding:0 24px;
+  }
+
+  .sub4 .sub3_leftbox{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+  }
+
+  .sub4 .sub3_rightbox{
+
+    width:100%;
+    max-width:720px;
+    margin:0 auto;
+    flex:none;
+  }
+}
+
+/* 1) 선 자체는 여백 없이 딱 선만 */
+.section_middle_line{
+  margin: 130px auto !important;
+  padding: 0 !important;           /* ✅ 선 위/아래 여백 제거 */
+  max-width: 1320px !important;
+  background: transparent !important;
+  border: 0 !important;
+  height: auto !important;
+}
+
+.section_middle_line::before{
+  content:"";
+  display:block;
+  height:1px;
+  background:#a5a5a5;
+  margin:0 24px;
+}
+
+/* sub1 ~ sub6 콘텐츠 시작 부분 위 간격 */
+.sub1 .section_wrap,
+.sub2 .section_wrap,
+.sub3 .section_wrap,
+.sub4 .section_wrap,
+.sub5 .section_wrap,
+.sub6 .section_wrap {
+  margin-top: 130px;
+}
+
+.sub3_leftbox {
+  margin-top: 0 !important;
+}
+
+

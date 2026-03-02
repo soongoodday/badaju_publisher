@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+.sub5 .sub_title{
+  max-width: 1320px;
+  height: 66px;
+  border: 2px solid #319EA3;
+  margin: 130px auto 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #319EA3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 섹션1 */
+.sub5 .section_wrap .section .section1{
+  margin: 0 auto;
+  width: 1320px;
+  height: 374px;
+}
+.sub5 .section_wrap .section .section1 .section_box{
+  width: 1320px;
+  margin: 0 auto;
+}
+.sub5 .sub3_titlebox{
+  display: flex;
+  width: 650px;
+}
+.sub5 .sub3_section_line{
+  width: 1px;
+  height: 89px;
+  background: #a5a5a5;
+}
+.sub5 .sub3_section_title{
+  width: 1320px;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 140%;
+  color: #319EA3;
+  margin-left: 91px;
+  letter-spacing: 5px;
+}
+.sub5 .badaju_sns{
+  margin: 90px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* 섹션2 */
+.sub5 .section_wrap .section .section2{
+  margin: 0 auto;
+  width: 1320px;
+  height: 374px;
+}
+.sub5 .section_wrap .section .section2 .section_box{
+  width: 1320px;
+  margin: 0 auto;
+}
+.sub5 .badaju_qr{
+  display: flex;
+  justify-content: center;
+  gap: 204px;
+  margin-top: 90px;
+}
+.sub5 .badaju_sns1,
+.sub5 .badaju_sns2{
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #5E5E5E;
+}
+.sub5 .badaju_sns1 img,
+.sub5 .badaju_sns2 img{
+  margin-bottom: 25px;
+}
+
+/* 섹션3(원본 유지) */
+.sub5 .section_wrap .section .section3{
+  margin: 0 auto;
+  width: 1320px;
+  height: 374px;
+}
+
+/* 1) 선 자체는 여백 없이 딱 선만 */
+.section_middle_line{
+  margin: 130px auto !important;
+  padding: 0 !important;           /* ✅ 선 위/아래 여백 제거 */
+  max-width: 1320px !important;
+  background: transparent !important;
+  border: 0 !important;
+  height: auto !important;
+}
+
+.section_middle_line::before{
+  content:"";
+  display:block;
+  height:1px;
+  background:#a5a5a5;
+  margin:0 24px;
+}
+
+.sub5 .footer_back {
+  margin-top: 130px;
+}
+
+/* =========================================
+   SUB5 반응형 핵심 (<=1024px)
+   - 고정폭/고정높이 해제
+   - QR은 1열 + 정중앙
+========================================= */
+@media (max-width: 1024px){
+
+  /* ✅ 섹션 고정폭/고정높이 풀기 */
+  .sub5 .section_wrap .section .section1,
+  .sub5 .section_wrap .section .section2,
+  .sub5 .section_wrap .section .section3{
+    width: 100% !important;
+    max-width: 1320px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ✅ section_box도 1320 고정 풀기 + 좌우 여백 */
+  .sub5 .section_wrap .section .section1 .section_box,
+  .sub5 .section_wrap .section .section2 .section_box{
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ✅ QR: 2열 → 1열 (정중앙 유지) */
+  .sub5 .badaju_qr{
+    display: flex !important;
+    flex-direction: column !important; /* 1열 */
+    align-items: center !important;    /* 정중앙 */
+    justify-content: center !important;
+
+    gap: 48px !important;             /* 기존 204px 제거 */
+    margin-top: 60px !important;      /* 기존 90px은 취향 */
+  }
+
+  /* QR 카드 폭 제한 + 가운데 */
+  .sub5 .badaju_sns1,
+  .sub5 .badaju_sns2{
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .sub5 .badaju_sns1 img,
+  .sub5 .badaju_sns2 img{
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 auto 20px !important;
+  }
+}
+
+/* QR 크기 확실히 줄이기 (최종) */
+.sub5 .badaju_qr img{
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+}
+
+/* sub1 ~ sub6 콘텐츠 시작 부분 위 간격 */
+.sub1 .section1,
+.sub2 .section1,
+.sub3 .section1,
+.sub4 .section1,
+.sub5 .section1,
+.sub6 .section1 {
+  margin-top: 130px;
+}
+
+.sub5 .badaju_sns, .sub5 .badaju_qr {
+  margin-top: 0;
+}
+
+.sub5 .badaju_sns{
+  margin-top: 50px;
+}

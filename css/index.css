@@ -1,0 +1,665 @@
+@charset "UTF-8";
+
+/* =========================
+   VISUAL (index)
+========================= */
+.visual{
+  width: 100%;
+  margin: 0 auto;
+  font-size: 0;
+}
+.visual .visual1{ display: flex; }
+.visual .visual2{ display: none; }
+.visual .visual1 img{
+  width: 100%;
+  display: block;
+}
+
+/* =========================
+   SECTION WRAP (index)
+========================= */
+.section_wrap{ margin: 130px auto; }
+
+/* ===== section1 ===== */
+.section1{
+  display: flex;
+  justify-content: space-around;
+}
+
+.section1_line{
+  width: 1px;
+  height: 240px;
+  background: #a5a5a5;
+  line-height: 126px;
+}
+
+.question{
+  font-size: 25px;
+  text-align: center;
+  color: #319EA3;
+}
+
+.main_title{
+  font-size: 22px;
+  width: 426px;
+  height: 41px;
+  background: #319EA3;
+  color: #fff;
+  text-align: center;
+  margin: 24px auto 0;
+  line-height: 41px;
+}
+
+.main_line{
+  width: 20px;
+  height: 2px;
+  background: #319EA3;
+  margin: 20px auto 0;
+}
+
+.main_section{
+  text-align: center;
+  margin-top: 20px;
+  color: #5e5e5e;
+  line-height: 160%;
+  font-size: 16px;
+}
+
+/* section1-2 이미지줄 */
+.section1-2{
+  max-width: 1320px;
+  width: 100%;
+  margin: 65px auto 0;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.section1-2_pic{
+  display: flex;
+  gap: 20px;
+}
+.section1-2_pic li{ width: 427px; }
+.section1-2_pic li img{ width: 100%; }
+
+/* ===== section2 ===== */
+.section2{
+  display: flex;
+  justify-content: space-around;
+}
+
+.section2-2_pic{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.section2-2_pic .ornament,
+.section2-2_pic .ornament2{
+  margin: 0;
+  width: clamp(80px, 12vw, 168px);
+  flex: 0 1 auto;
+}
+.section2-2_pic .pic_ornament{
+  width: clamp(140px, 18vw, 204px);
+  flex: 0 0 auto;
+}
+.section2-2_pic img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.juae{
+  margin-top: 20px;
+  text-align: center;
+  color: #319EA3;
+  font-size: 16px;
+}
+
+/* ===== section3 (책 리스트: grid 최종본) ===== */
+.section3-1{
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.section3-1 .section3_grid{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  box-sizing: border-box;
+  margin-top: 60px;
+}
+
+.section3-1 .book_card{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.section3-1 .book_thumb{
+  width: 100%;
+  aspect-ratio: 227 / 320;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #a5a5a5;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.section3-1 .book_thumb > a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.section3-1 .book_thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* COMMING SOON */
+.section3-1 .book_thumb.coming_soon{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  font-size: 20px;
+  color: #a5a5a5;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1 !important;
+  padding: 0 !important;
+}
+
+.section3-1 .book_desc{ width: 100%; color: #434343; }
+.section3-1 .book_title{ font-weight: bold; font-size: 16px; }
+.section3-1 .book_line{ width: 100%; height: 1px; background: #a5a5a5; margin: 8px 0; }
+.section3-1 .book_author{ font-size: 15px; margin-bottom: 6px; }
+.section3-1 .book_text{
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: -0.5px;
+  word-break: keep-all;
+}
+
+@media (max-width: 1200px){
+  .section3-1 .section3_grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .section3-1 .section3_grid{ grid-template-columns: 1fr; padding: 0 16px; }
+}
+
+/* ===== section4 (FAQ/공지 레이아웃 최종) ===== */
+.section_wrap .section4 .section4_box{
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.section_wrap .section4 .section4_box .ask_box{
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  border: 1px solid #9f9f9f;
+  padding: 50px 0 !important; /* 위/아래 동일 */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 제목줄 */
+.section4 .section4_box > .ask_box .ask_titlebox{
+  width: calc(100% - 80px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.section4 .section4_box > .ask_box .ask_line{
+  width: calc(100% - 80px);
+  margin: 14px auto 0;
+  height: 1px;
+  background: #9f9f9f;
+  box-sizing: border-box;
+}
+.section4 .section4_box > .ask_box .ask_section{
+  width: calc(100% - 80px);
+  margin: 24px auto 0;
+  box-sizing: border-box;
+}
+
+/* wrapper 패딩(92px) 제거 */
+.section_wrap .section4 .section4_box .ask_box .ask_section .ask1_box,
+.section_wrap .section4 .section4_box .ask_box .ask_section .ask2_box,
+.section_wrap .section4 .section4_box .ask_box .ask_section .ask3_box,
+.section_wrap .section4 .section4_box .ask_box .ask_section .ask4_box,
+.section_wrap .section4 .section4_box .ask_box .ask_section .ask5_box{
+  padding: 0 !important;
+  margin: 0 0 14px 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ul 기본값 제거 */
+.section4 .ask_section ul{
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* 질문(Q) */
+.section4 .ask_section .ask_question1,
+.section4 .ask_section .ask_question2,
+.section4 .ask_section .ask_question3,
+.section4 .ask_section .ask_question4,
+.section4 .ask_section .ask_question5{
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 12px 18px !important;
+  background: #f3f3f3 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* 답변(A) - Q 바로 아래 붙게 */
+.section4 .ask_section .ask_response1,
+.section4 .ask_section .ask_response2,
+.section4 .ask_section .ask_response3,
+.section4 .ask_section .ask_response4,
+.section4 .ask_section .ask_response5{
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  border: 1px solid #9f9f9f;
+  border-top: 0 !important;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 18px !important;
+  transition: max-height .25s ease, opacity .25s ease, padding .25s ease;
+}
+
+.section4 .ask1_box_li:hover .ask_response1,
+.section4 .ask2_box_li:hover .ask_response2,
+.section4 .ask3_box_li:hover .ask_response3,
+.section4 .ask4_box_li:hover .ask_response4,
+.section4 .ask5_box_li:hover .ask_response5{
+  max-height: 1000px;
+  opacity: 1;
+  padding: 12px 18px !important;
+}
+
+/* 태블릿 이하: FAQ/공지 세로 스택 */
+@media (max-width: 1024px){
+  .section_wrap .section4 .section4_box{
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 18px !important;
+  }
+  .section_wrap .section4 .section4_box .ask_box{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ===== section5 ===== */
+.section_wrap .section5 .section5-1{
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.section_wrap .section5 .section5-1_map{
+  width: 914px;
+  height: 554px;
+  margin: 70px auto 0;
+}
+.section_wrap .section5 .section5-1_map img{ width: 100%; }
+
+.section_wrap .section5 .badaju_location{
+  text-align: center;
+  margin-top: 90px;
+}
+.section_wrap .section5 .badaju_location .badaju_loca{
+  font-weight: bold;
+  font-size: 14px;
+  color: #5e5e5e;
+}
+.section_wrap .section5 .badaju_location .badaju_line{
+  width: 1320px;
+  height: 1px;
+  background: #a5a5a5;
+  margin: 19px auto;
+}
+.section_wrap .section5 .badaju_bus{
+  font-size: 14px;
+  color: #5e5e5e;
+}
+
+/* ✅ section3도 section1/2처럼 좌우 라인 + 가운데 컨텐츠 구조로 */
+.section3, .section4-1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; /* 또는 center */
+}
+
+.section3_button {
+    display: none;
+}
+
+/* =========================
+   SECTION4 FAQ/NOTICE (최종 고정)
+========================= */
+.section4-1{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.section4 .section4_box{
+  max-width: 1320px;
+  width: 100%;
+  margin: 65px auto 0;
+  padding: 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 24px;
+}
+
+.section4 .section4_box .ask_box{
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #9f9f9f;
+  padding: 50px 0 !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 제목줄 */
+.section4 .ask_titlebox{
+  width: calc(100% - 80px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section4 .ask_line{
+  width: calc(100% - 80px);
+  margin: 14px auto 0;
+  height: 1px;
+  background: #9f9f9f;
+}
+
+.section4 .ask_section{
+  width: calc(100% - 80px);
+  margin: 24px auto 0;
+}
+
+.section4 .ask_section ul{
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* Q/A 기본 */
+.section4 .ask_list .qa_item{
+  margin-bottom: 14px;
+}
+
+.section4 .ask_question{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 18px;
+  background: #f3f3f3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.section4 .ask_response{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #9f9f9f;
+  border-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  transition: max-height .25s ease, opacity .25s ease, padding .25s ease;
+}
+
+/* hover 펼치기 */
+.section4 .qa_item:hover .ask_response{
+  max-height: 1000px;
+  opacity: 1;
+  padding: 12px 18px;
+}
+
+/* 태블릿 이하: 세로 스택 */
+@media (max-width: 1024px){
+  .section4 .section4_box{
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+.section3{
+  display: flex;                 /* 이건 전에 얘기한 큰 공백 해결용 */
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 65px;           /* ✅ 여기만 조절하면 됨 */
+}
+
+/* ✅ COMING SOON 무조건 정중앙 고정(덮어쓰기 최강) */
+html body .section3-1 ul.section3_grid > li.book_card > .book_thumb.coming_soon{
+  display: grid !important;
+  place-items: center !important;
+
+  /* 혹시 다른 규칙이 건드리는 것까지 차단 */
+  align-items: center !important;
+  justify-items: center !important;
+  text-align: center !important;
+
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* ✅ SECTION4: 회색 박스 폭 == 제목/선 폭 (완전 동일하게) */
+html body .section4 .ask_box{
+  /* 회색 박스(리스트) 기준 "안쪽 기둥" */
+  --inner-w: calc(100% - 160px); /* (= 좌우 80px씩) */
+  --inner-m: 80px;               /* 좌/우 여백 */
+}
+
+/* 1) 제목줄(바다주가~ / more) */
+html body .section4 .ask_box .ask_titlebox{
+  width: var(--inner-w) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* 2) 제목 아래 선 */
+html body .section4 .ask_box .ask_line{
+  width: var(--inner-w) !important;
+  margin: 18px auto 0 !important;
+  height: 1px !important;
+  background: #9f9f9f !important;
+}
+
+/* 3) 리스트 영역(회색 박스들이 들어있는 곳) */
+html body .section4 .ask_box .ask_section{
+  width: var(--inner-w) !important;
+  margin: 28px auto 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* 4) ul 기본 들여쓰기 제거(이게 남아있으면 무조건 어긋남) */
+html body .section4 .ask_box .ask_section .ask_list{
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* 5) 회색 박스(질문) 폭은 기둥 100% 꽉 */
+html body .section4 .ask_box .ask_section .ask_list .qa_item{
+  margin: 0 0 22px 0 !important;
+}
+html body .section4 .ask_box .ask_section .ask_list .ask_question{
+  width: 100% !important;
+  padding: 22px 26px !important;
+  background: #f3f3f3 !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.visual1 {
+    display: block;
+}
+
+.visual2 {
+    display: none;
+}
+
+.visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 1) 선 자체는 여백 없이 딱 선만 */
+.index .section_middle_line{
+  margin: 130px auto !important;
+  padding: 0 !important;           /* ✅ 선 위/아래 여백 제거 */
+  max-width: 1320px !important;
+  background: transparent !important;
+  border: 0 !important;
+  height: auto !important;
+}
+
+.index .section_middle_line::before{
+  content:"";
+  display:block;
+  height:1px;
+  background:#a5a5a5;
+  margin:0 24px;
+}
+
+/* =========================================
+   INDEX 공통: section1~section4(또는 4-1)
+   좌/중/우 레이아웃을 section_middle_line 좌우 기준(24px)과 통일
+========================================= */
+
+.index{
+  --container: 1320px;
+  --side-pad: 24px; /* section_middle_line::before margin 값과 동일 */
+}
+
+/* 1) middle line 자체도 같은 기준 유지(이미 있으면 생략 가능) */
+.index .section_middle_line{
+  max-width: var(--container);
+  margin: 130px auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+.index .section_middle_line::before{
+  content:"";
+  display:block;
+  height:1px;
+  background:#a5a5a5;
+  margin: 0 var(--side-pad); /* ✅ 기준선 */
+}
+
+/* 2) section1~section4(너 코드에선 section4-1) 공통 프레임 */
+.index :is(.section1,.section2,.section3,.section4-1){
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);        /* ✅ middle line과 같은 좌우 기준 */
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;     /* ✅ space-around 금지: 기준이 흔들림 */
+  align-items: center;
+  gap: 0;
+}
+
+/* 3) 세로선(좌/우 공통) */
+.index :is(.section1,.section2,.section3,.section4-1)
+  :is(.section1_line,.section2_line,.section3_line,.section4_line){
+  flex: 0 0 1px;
+  width: 1px;
+  background: #a5a5a5;
+}
+
+/* 4) 가운데 콘텐츠는 ‘남는 공간’을 모두 차지하고 가운데 정렬 */
+.index :is(.section1,.section2,.section3,.section4-1) > :not(
+  :is(.section1_line,.section2_line,.section3_line,.section4_line)
+){
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* 5) section1/2는 가운데 콘텐츠를 진짜 가운데로 */
+.index :is(.section1,.section2) > :not(
+  :is(.section1_line,.section2_line)
+){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 6) section3/section4-1은 가운데 콘텐츠(실제 컨텐츠 박스)를 가운데 정렬 */
+.index :is(.section3,.section4-1){
+  align-items: flex-start; /* 책/FAQ는 위쪽 정렬이 자연스러움 */
+}
+.index :is(.section3,.section4-1) > :not(
+  :is(.section3_line,.section4_line)
+){
+  margin: 0 auto; /* 가운데로 */
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+

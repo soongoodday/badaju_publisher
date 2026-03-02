@@ -1,0 +1,1533 @@
+@charset "UTF-8";
+
+/* =========================
+   TABLET (481px ~ 1024px)
+   ========================= */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+
+  /* -------------------------
+    BASE
+  ------------------------- */
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* 공통: 고정폭 해제 + 좌우 여백 */
+  .header .centerbox,
+  .section,
+  .section_wrap,
+  .sub1 .sub_title,
+  .sub2 .sub_title,
+  .sub3 .sub_title,
+  .sub4 .sub_title,
+  .sub5 .sub_title,
+  .sub6 .sub_title {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .header .centerbox {
+    padding: 0 24px;
+  }
+
+  .section_wrap {
+    margin: 90px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  /* -------------------------
+    HEADER (tablet)
+  ------------------------- */
+  /* nav 숨기고 햄버거 사용 */
+  .header .centerbox .nav {
+    display: none !important;
+  }
+
+  .header .hamburger {
+    display: block !important;
+  }
+
+  /* 헤더 기준점 */
+  .header {
+    position: relative;
+  }
+
+  /* 로고 중앙 정렬(absolute로 안정화) */
+  .header .centerbox {
+    position: relative;
+  }
+
+  .header .centerbox h1.logo,
+  .header .centerbox .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* 햄버거 왼쪽 고정 */
+  .header .hamburger {
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    z-index: 1000;
+  }
+
+  /* ✅ (선택) 버튼이 button 구조일 때 */
+  .header .hamburger .hamburger_btn {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+  }
+
+  .header .hamburger img,
+  .header .hamburger .hamburger_btn img {
+    width: 28px;
+    height: auto;
+    display: block;
+  }
+
+  /* ✅ 슬라이드 메뉴(닫힘/열림은 body.menu-open 토글) */
+  .header .hamburger .mobile_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 280px;
+    background: #185c67;
+
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    z-index: 999;
+
+    padding-top: 96px;
+    /* 헤더 높이만큼 */
+    box-shadow: 8px 0 24px rgba(0, 0, 0, .18);
+    display: block;
+  }
+
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 998;
+  }
+
+  body.menu-open .header .hamburger .mobile_menu {
+    transform: translateX(0);
+  }
+
+  .header .hamburger .mobile_gnb {
+    padding: 0 16px;
+  }
+
+  .header .hamburger .mobile_gnb li a {
+    display: block;
+    padding: 14px 12px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .header .hamburger .mobile_gnb li a:hover {
+    background: rgba(255, 255, 255, .12);
+  }
+
+  /* -------------------------
+    VISUAL (tablet)
+  ------------------------- */
+  /* 태블릿은 PC 비주얼 유지 */
+  .visual .visual1 {
+    display: flex;
+  }
+
+  .visual .visual2 {
+    display: none;
+  }
+
+  /* -------------------------
+    SECTION 1 (이미지 3장)
+  ------------------------- */
+  /* 세로라인 제거 */
+  .section1_line {
+    display: none !important;
+  }
+
+  /* 2열 + 마지막 1열 */
+  .section .section_wrap .section1-2 {
+    width: 100% !important;
+  }
+
+  .section .section_wrap .section1-2 .section1-2_pic {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    padding: 0 !important;
+    /* section_wrap에 padding 있음 */
+    box-sizing: border-box;
+  }
+
+  .section .section_wrap .section1-2 .section1-2_pic li {
+    width: calc((100% - 16px) / 2) !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .section .section_wrap .section1-2 .section1-2_pic li:nth-child(3) {
+    width: 100% !important;
+  }
+
+  .section .section_wrap .section1-2 .section1-2_pic li img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+    /* ✅ 잘림 방지 */
+  }
+
+  /* -------------------------
+    SECTION 2 (오브젝트 간격)
+  ------------------------- */
+  .section2-2_pic .ornament {
+    margin-right: 40px;
+  }
+
+  .section2-2_pic .ornament2 {
+    margin-left: 40px;
+  }
+
+  /* -------------------------
+    SECTION 3 (책 카드 / 가로 넘침)
+  ------------------------- */
+  /* ✅ 네 HTML 기준: .section3_grid 사용 */
+  .section .section_wrap .section3-1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .section .section_wrap .section3-1 .section3_grid {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    padding: 0 0 12px !important;
+    margin: 0 !important;
+
+    list-style: none !important;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box !important;
+  }
+
+  .section .section_wrap .section3-1 .section3_grid>.book_card {
+    flex: 0 0 260px !important;
+    /* 220~300 취향 */
+    max-width: 260px !important;
+  }
+
+  .section .section_wrap .section3-1 .section3_grid .book_thumb,
+  .section .section_wrap .section3-1 .section3_grid .book_thumb img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+
+  /* 세로 라인/PC용 영역은 숨김(스크롤에 방해) */
+  .section_vertical_line {
+    display: none !important;
+  }
+
+  /* 설명 4개 박스는 2열로 */
+  .section3_section {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    box-sizing: border-box;
+  }
+
+  .section_part1,
+  .section_part2,
+  .section_part3,
+  .section_part4 {
+    width: calc((100% - 16px) / 2) !important;
+    height: auto !important;
+  }
+
+  .section3_section .section3_sectionbox li,
+  .sectionbox_contents,
+  .sectionbox_line {
+    width: 100% !important;
+  }
+
+  /* -------------------------
+    SECTION 4 (FAQ)
+  ------------------------- */
+  .section_wrap .section4 .section4_box {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box {
+    width: 100% !important;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box .ask_titlebox,
+  .section_wrap .section4 .section4_box .ask_box .ask_line {
+    width: 100% !important;
+    padding: 0 16px !important;
+    box-sizing: border-box;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box .ask_section :is(.ask1_box, .ask2_box, .ask3_box, .ask4_box, .ask5_box) {
+    padding: 12px 16px !important;
+    box-sizing: border-box;
+  }
+
+  /* -------------------------
+    SECTION 5 (지도)
+  ------------------------- */
+  .section_wrap .section5 .section5-1_map {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* -------------------------
+    MIDDLE LINE
+  ------------------------- */
+  .section_middle_line {
+    margin: 90px auto;
+  }
+
+  /* -------------------------
+    FOOTER
+  ------------------------- */
+  .footer .footer_box {
+    flex-direction: column;
+    gap: 24px;
+    padding: 50px 24px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .footer .footer_box .copyright {
+    width: 100%;
+  }
+}
+
+
+/* =========================
+   EDGE FIX (<= 1200px)
+   - 태블릿~작은 데스크탑 구간에서 섹션3 잘림 방지
+   ========================= */
+@media screen and (max-width: 1200px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .section,
+  .section_wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ✅ 태블릿 완전 강제 정렬 */
+@media (max-width:1024px) {
+
+  .section_wrap .section4 .section4_box .ask_box .ask_titlebox {
+    width: calc(100% - 80px) !important;
+    margin: 0 auto !important;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box .ask_line {
+    width: calc(100% - 80px) !important;
+    margin: 14px auto 0 !important;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box .ask_section {
+    width: calc(100% - 80px) !important;
+    margin: 24px auto 0 !important;
+  }
+
+}
+
+
+
+
+/* sub1 css */
+@media (min-width: 481px) and (max-width: 1024px) {
+
+  .sub1 .section_wrap,
+  .sub1 .section,
+  .sub1 .section1,
+  .sub1 .section2 {
+    padding: 0 24px;
+  }
+
+  /* 소개: 간격 줄이고 좌측 폭도 살짝 줄이기 */
+  .sub1 .section1 .section_box {
+    gap: 40px;
+  }
+
+  .sub1 .sub1_titlebox {
+    flex-basis: 180px;
+    min-width: 180px;
+  }
+
+  /* 대표이사: 이미지 폭 줄이기 */
+  .sub1 .sub1_section2_wrap {
+    gap: 32px;
+  }
+
+  .sub1 .juae_picture {
+    flex-basis: 280px;
+    max-width: 280px;
+  }
+
+  .sub_visual1 {
+    display: block !important;
+  }
+
+  .sub_visual2 {
+    display: none !important;
+  }
+
+}
+
+@media (min-width: 481px) and (max-width: 1024px){
+
+  /* 고정폭(1320) -> 유동폭 */
+  .sub1 .section_wrap .section{
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  /* 섹션1/2 좌우 간격 축소 */
+  .sub1 .section1 .section_box,
+  .sub1 .section2 .section_box{
+    gap: 40px;
+  }
+
+  .sub1 .section1 .sub1_titlebox,
+  .sub1 .section2 .sub1_titlebox{
+    width: 180px;
+    flex-basis: 180px;
+  }
+
+  .sub1 .juae_picture{
+    width: 280px;
+    flex-basis: 280px;
+  }
+}
+
+@media (max-width: 1100px){
+
+  .sub1 .section2 .section_box{
+    gap: 24px;
+  }
+
+  .sub1 .sub1_section2_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ✅ 순서 바꾸기 */
+  .sub1 .juae_picture{ order: 1; width: min(420px, 100%); }
+  .sub1 .sub1_section2_section{ order: 2; }
+}
+
+/* 2열 유지하면서: 사진 작게 + 글줄 길게 (애매한 중간 폭 구간) */
+@media (max-width: 1240px) and (min-width: 981px){
+
+  /* 섹션2 전체 간격 조금 줄여서 글 폭 확보 */
+  .sub1 .section2 .section_box{
+    gap: 60px;
+  }
+
+  /* 텍스트+사진 래퍼 */
+  .sub1 .sub1_section2_wrap{
+    gap: 36px;
+    align-items: flex-start;
+  }
+
+  /* ✅ 글 영역: 더 넓게 (줄 길이 늘리기) */
+  .sub1 .sub1_section2_section{
+    flex: 1 1 auto;
+    min-width: 560px;     /* 줄 길이 확보 핵심 */
+    max-width: 720px;     /* 너무 길어지면 가독성 떨어져서 캡 */
+  }
+
+  /* ✅ 사진 영역: 더 작게 */
+  .sub1 .juae_picture{
+    flex: 0 0 300px;      /* 사진 컬럼 고정폭 줄임 */
+    max-width: 300px;
+    width: 300px;
+  }
+  .sub1 .juae_picture img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 1240px) and (min-width: 981px){
+  .sub1 .sub1_section2_sections{
+    font-size: 16px;      /* 필요하면만 */
+    line-height: 1.85;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+}
+
+/* =====================================
+   SUB1 반응형 정리본 (section1 + section2)
+   tablet.css 맨 아래에 붙이기
+===================================== */
+
+@media (max-width: 1024px){
+
+/* =====================
+   공통 컨테이너
+===================== */
+
+.sub1 .section_wrap,
+.sub1 .section,
+.sub1 .section1,
+.sub1 .section2{
+  width:100%;
+  padding:0 24px;
+  box-sizing:border-box;
+}
+
+
+/* =====================
+   SECTION1 (소개)
+   제목 → 본문
+===================== */
+
+.sub1 .section1 .section_box{
+
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+
+/* 제목 가운데 정렬 */
+
+.sub1 .section1 .sub1_titlebox{
+
+  justify-content:center;
+  text-align:center;
+}
+
+
+/* 세로라인 + 제목 */
+
+.sub1 .sub1_section_line{
+
+  height:70px;
+}
+
+
+.sub1 .sub1_section_title{
+
+  font-size:28px;
+}
+
+
+/* 본문 영역 */
+
+.sub1 .sub1_section_section{
+
+  width:100%;
+}
+
+
+/* 글줄 안정화 */
+
+.sub1 .sub1_sections li{
+
+  line-height:1.8;
+}
+
+
+
+/* =====================
+   SECTION2 (대표이사)
+   제목 → 사진 → 글
+===================== */
+
+.sub1 .section2 .section_box{
+
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+
+/* 제목 가운데 */
+
+.sub1 .section2 .sub1_titlebox{
+
+  justify-content:center;
+  text-align:center;
+}
+
+
+
+/* 대표이사 내부 */
+
+.sub1 .sub1_section2_wrap{
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:40px;
+}
+
+
+
+/* 사진 위 */
+
+.sub1 .juae_picture{
+
+  order:-1;
+
+  width:60%;
+  max-width:320px;
+}
+
+
+.sub1 .juae_picture img{
+
+  width:100%;
+  height:auto;
+}
+
+
+
+/* 글 영역 */
+
+.sub1 .sub1_section2_section{
+
+  width:100%;
+  max-width:600px;
+}
+
+
+/* 글줄 안정화 */
+
+.sub1 .sub1_section2_sections li{
+
+  line-height:1.8;
+}
+
+
+/* 서명 가운데 */
+
+.sub1 .juae_sign{
+
+  text-align:left;
+}
+}
+
+/* =========================================
+   SUB1 SECTION2
+   태블릿부터 사진 → 본문 순서
+   (이미지 잘림 방지용 최종)
+========================================= */
+
+@media (max-width:1024px){
+
+/* section2 전체 → 세로배치 */
+.sub1 .section2 .section_box{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+
+/* 제목 아래에 사진+본문 영역 */
+.sub1 .sub1_section2_wrap{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+
+/* ✅ 사진 먼저 */
+.sub1 .juae_picture{
+  order:1;
+  width:100%;
+  max-width:420px;
+  margin:0 auto;
+}
+
+
+/* ✅ 본문 아래 */
+.sub1 .sub1_section2_section{
+  order:2;
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+}
+
+
+/* 이미지 잘림 완전 방지 */
+.sub1 .juae_picture img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+}
+
+/* =========================================
+   SUB1 SECTION2
+   1025~1240(작은 데스크탑/가로 태블릿)에서도
+   사진 -> 본문(세로)로 강제해서 잘림 방지
+   ========================================= */
+@media (max-width: 1240px) {
+
+  /* 섹션2: 타이틀(왼쪽)은 그대로 두고,
+     오른쪽 콘텐츠만 세로로(사진 -> 글) */
+  .sub1 .sub1_section2_wrap{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 32px !important;
+    min-width: 0;
+  }
+
+  /* 사진을 먼저 */
+  .sub1 .juae_picture{
+    order: -1 !important;
+    flex: none !important;
+    width: min(420px, 100%) !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+  }
+
+  /* 이미지 절대 잘림 방지 */
+  .sub1 .juae_picture img{
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+
+  /* 글 영역은 넓게 */
+  .sub1 .sub1_section2_section{
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 0 auto !important;
+    min-width: 0;
+  }
+}
+
+/* =========================================
+   ✅ SUB1 SECTION2
+   1280px 이하부터: 사진 -> 본문 1열로 전환
+   (이미지 잘림 생기기 전에 미리 세로배치)
+   ========================================= */
+@media (max-width: 1280px){
+
+  /* section2: 왼쪽 타이틀은 유지, 오른쪽 콘텐츠만 세로 */
+  .sub1 .sub1_section2_wrap{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 32px !important;
+    min-width: 0;
+  }
+
+  /* ✅ 사진 먼저 */
+  .sub1 .juae_picture{
+    order: -1 !important;
+    flex: none !important;
+    width: clamp(240px, 60vw, 420px) !important; /* 자연스럽게 줄어듦 */
+    max-width: 420px !important;
+    margin: 0 auto !important;
+  }
+
+  .sub1 .juae_picture img{
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+
+  /* ✅ 본문 아래 */
+  .sub1 .sub1_section2_section{
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 0 auto !important;
+    min-width: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* sub2 css */
+
+/* =========================
+   SUB2 (TABLET)
+   481px ~ 1024px
+========================= */
+@media (min-width: 481px) and (max-width: 1024px) {
+
+  /* ✅ fixed header면 본문이 깔리지 않게(너 헤더 높이에 맞춰 조절) */
+  .sub2 { padding-top: 96px; }
+
+  /* ✅ 서브 대제목: 1320 고정폭 해제 */
+  .sub_title{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 110px auto 0;
+    padding: 18px 12px;
+    font-size: 22px;
+    box-sizing: border-box;
+  }
+
+  /* ✅ 섹션/박스 고정폭 해제 */
+  .sub2 .section_wrap .section,
+  .sub2 .section_wrap .section .section1,
+  .sub2 .section_wrap .section .section1 .section_box,
+  .sub2 .section_wrap .section .section2{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* 타이틀 간격 축소 */
+  .sub2 .section_wrap .section .section1 .section_box .sub1_titlebox,
+  .sub2 .section_wrap .section .section2 .section_box .sub1_titlebox{
+    margin-bottom: 50px;
+    align-items: flex-start;
+  }
+
+  /* 타이틀 텍스트 폭/여백 조절 */
+  .sub2 .section_wrap .section .section1 .section_box .sub1_titlebox .sub1_section_title,
+  .sub2 .section_wrap .section .section2 .section_box .sub1_titlebox .sub1_section_title{
+    width: auto;
+    max-width: 100%;
+    margin-left: 30px;
+    font-size: 22px;
+    box-sizing: border-box;
+  }
+
+  /* 버튼: 유동폭 */
+  .sub2 .section3_button{
+    width: 100%;
+    margin: 0 auto 16px;
+  }
+
+  /* ✅ 표지 리스트: 태블릿 2열 그리드 */
+  .sub2 .section3_pic{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    box-sizing: border-box;
+  }
+
+  /* span 세로줄은 태블릿에서 제거(구조상 flex/grid 깨는 주범) */
+  .sub2 .section3_pic > span.section_vertical_line{
+    display: none !important;
+  }
+
+  .sub2 .section3_pic > li{
+    width: auto;
+  }
+
+  .sub2 .section3_pic > li img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ✅ 설명 영역: 태블릿 2열 */
+  .sub2 .section3_section{
+    width: 100%;
+    max-width: 100%;
+    margin: 18px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    box-sizing: border-box;
+  }
+
+  .sub2 .section_part1,
+  .sub2 .section_part2,
+  .sub2 .section_part3,
+  .sub2 .section_part4{
+    width: auto;
+    max-width: 100%;
+  }
+
+  /* 이미지 안전장치 */
+  .sub2 img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px){
+
+  .sub2 .section3_grid{
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .sub2 .section3_grid .grid_img,
+  .sub2 .section3_grid .grid_img.coming{
+    height: 360px;
+  }
+
+}
+
+/* =========================
+   SUB2 가로 스크롤 (TABLET)
+========================= */
+
+@media (min-width:481px) and (max-width:1024px){
+
+.sub2 .section3_grid{
+  display:flex !important;
+  gap:30px;
+  overflow-x:auto;
+  padding:0 30px;
+  scroll-snap-type:x mandatory;
+}
+
+/* 카드 크기 고정 */
+.sub2 .grid_item{
+  flex:0 0 300px;
+  scroll-snap-align:start;
+}
+
+/* 스크롤바 숨기기 */
+.sub2 .section3_grid::-webkit-scrollbar{
+  display:none;
+}
+
+}
+
+@media (min-width:481px) and (max-width:1024px){
+
+  /* 카드 높이 균일 */
+  .sub2 .grid_item{
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+  }
+
+  /* ✅ 표지 프레임 높이 고정 */
+  .sub2 .grid_img{
+    height: 360px;              /* 여기로 책 크기 통일 */
+    border: 1px solid #cfcfcf;
+    background: #fff;
+    display: flex;
+    align-items: center;        /* 가운데 정렬 */
+    justify-content: center;    /* 가운데 정렬 */
+    overflow: hidden;
+  }
+
+  /* ✅ 이미지가 프레임 안에서 동일 비율로 */
+  .sub2 .grid_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;        /* 비율 유지 */
+    display: block;
+  }
+
+  /* COMING SOON도 동일 높이 */
+  .sub2 .grid_img.coming{
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a9a9a;
+  }
+}
+
+/* 1024px 이하: 세로로 쌓기 */
+@media (max-width: 1024px){
+  .sub3 .section_box{
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sub3 .sub3_rightbox{
+    flex: none;
+    width: 100%;
+    max-width: 520px;   /* 원하면 제거 가능 */
+    margin: 0 auto;
+  }
+}
+
+/* ✅ TABLET에서 헤더 위 여백(내려앉음) 방지 */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    margin: 0 !important;       /* ✅ margin-top 같은 거 싹 제거 */
+    transform: none !important; /* ✅ 혹시 transform 잔재 있으면 차단 */
+    z-index: 2000;
+  }
+
+  body{
+    margin: 0; /* ✅ 혹시 기본 마진/커스텀 마진 있으면 제거 */
+  }
+}
+
+/* ✅ sub1: 태블릿에서 헤더 fixed로 가려지는 비주얼 보정 */
+@media (min-width: 481px) and (max-width: 1024px){
+  body.sub1{ padding-top: 96px; }  /* 헤더 높이만큼 밀어내기 */
+}
+
+/* =========================
+   SUB1 ~ SUB6 여백 강제 수정 (tablet + mobile 공통)
+   - section_wrap 기본 margin:90px 제거
+   ========================= */
+
+@media (max-width: 1024px){
+
+  /* 1) sub 타이틀 래퍼 간격 초기화 */
+  body.sub1 .sub2_title,
+  body.sub2 .sub2_title,
+  body.sub3 .sub2_title,
+  body.sub4 .sub2_title,
+  body.sub5 .sub2_title,
+  body.sub6 .sub2_title{
+    margin: 0 !important;
+    padding: 96px 24px 0 !important; /* fixed header 기준 */
+    box-sizing: border-box !important;
+  }
+
+
+  /* 2) 타이틀 박스 간격 */
+  body.sub1 .sub_title,
+  body.sub2 .sub_title,
+  body.sub3 .sub_title,
+  body.sub4 .sub_title,
+  body.sub5 .sub_title,
+  body.sub6 .sub_title{
+    margin: 24px auto 24px !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+  }
+
+
+  /* 3) section_wrap 위 여백 제거 (핵심) */
+  body.sub1 .section_wrap,
+  body.sub2 .section_wrap,
+  body.sub3 .section_wrap,
+  body.sub4 .section_wrap,
+  body.sub5 .section_wrap,
+  body.sub6 .section_wrap{
+    margin: 24px auto 0 !important;   /* 기본 90px 제거 */
+    padding: 0 24px !important;       /* 좌우 여백 유지 */
+    top: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+
+  /* 4) section 자체 margin 차단 */
+  body.sub1 .section,
+  body.sub2 .section,
+  body.sub3 .section,
+  body.sub4 .section,
+  body.sub5 .section,
+  body.sub6 .section{
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+}
+
+/* =========================================
+   SUB1~SUB6 상단 공간 통일/축소 (TABLET)
+   - 헤더 아래 여백 + 타이틀 + 본문 시작 간격 통일
+   - tablet.css 맨 아래에 붙이기
+========================================= */
+@media (min-width: 481px) and (max-width: 1024px){
+
+  /* 3) 본문 래퍼: 기본 margin 90px 제거하고 바로 시작 */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .section_wrap{
+    margin: 24px auto 0 !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+    top: 0 !important;
+  }
+
+  /* 4) 혹시 section이 margin으로 밀면 차단 */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .section{
+    margin-top: 0 !important;
+  }
+}
+
+/* =========================================
+   SUB1 ~ SUB6 공통 타이틀 반응형
+   (sub1_ / sub3_ 둘 다 지원)
+========================================= */
+
+@media (max-width: 1024px){
+
+  /* 타이틀 박스 (선 + 텍스트) */
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_titlebox,.sub3_titlebox){
+
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 24px !important;
+
+    margin: 0 0 40px !important;
+    padding: 0 24px !important;
+
+    box-sizing: border-box !important;
+
+    text-align: left !important;
+  }
+
+
+  /* 세로선 */
+
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_section_line,.sub3_section_line){
+
+    flex: 0 0 1px !important;
+
+    height: 70px !important;
+
+    margin: 0 !important;
+  }
+
+
+  /* 타이틀 텍스트 */
+
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_section_title,.sub3_section_title){
+
+    width: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 28px !important;
+
+    letter-spacing: 0 !important;
+
+    white-space: normal !important;
+    word-break: keep-all !important;
+  }
+
+}
+
+
+/* =========================================
+   모바일
+========================================= */
+
+@media (max-width: 480px){
+
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_titlebox,.sub3_titlebox){
+
+    padding: 0 18px !important;
+    gap: 18px !important;
+
+    margin-bottom: 28px !important;
+  }
+
+
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_section_line,.sub3_section_line){
+
+    height: 52px !important;
+  }
+
+
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_section_title,.sub3_section_title){
+
+    font-size: 20px !important;
+  }
+
+}
+
+/* =========================================
+   ✅ SUB1 타이틀박스 좁아지는 문제 최종 해결
+   - 태블릿/모바일에서 타이틀을 100%로 풀고
+     본문은 아래로 내려가게(세로 스택)
+========================================= */
+@media (max-width: 1024px){
+
+  /* section1/2: 타이틀 + 본문을 세로로 쌓기 */
+  .sub1 .section1 .section_box,
+  .sub1 .section2 .section_box{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    align-items: stretch !important;
+  }
+
+  /* ✅ 핵심: sub1_titlebox 고정폭(180px) 전부 무력화 */
+  .sub1 .sub1_titlebox{
+    width: 100% !important;
+    flex: none !important;
+    flex-basis: auto !important;
+    min-width: 0 !important;
+
+    padding: 0 24px !important;  /* 필요 없으면 0으로 */
+    box-sizing: border-box !important;
+  }
+
+  /* 타이틀(선+글자) 정렬 */
+  .sub1 .sub1_titlebox{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important; /* 원하면 center로 */
+    gap: 18px !important;
+    margin: 0 0 28px !important;
+    text-align: left !important;
+  }
+
+  .sub1 .sub1_section_title{
+    margin: 0 !important;        /* 기존 margin-left 같은 거 차단 */
+  }
+}
+
+/* =========================================
+   SUB1 ~ SUB6
+   타이틀 시작점 = 본문 시작점 완전 통일
+========================================= */
+
+@media (max-width: 1024px){
+
+  /* 1️⃣ 본문 기준 패딩 (모든 sub 동일) */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  .section_wrap{
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+  }
+
+
+  /* 2️⃣ section_box도 동일 기준 */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  .section_box{
+    padding: 0 !important;  /* 이중 패딩 제거 */
+    box-sizing: border-box !important;
+  }
+
+
+  /* 3️⃣ 타이틀 박스 시작점 = 본문 시작점 */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_titlebox,.sub3_titlebox){
+
+    padding: 0 !important;
+    margin: 0 0 28px !important;
+
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+
+  /* 4️⃣ 선 → 글자 간격만 유지 */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_section_title,.sub3_section_title){
+
+    margin-left: 18px !important;
+  }
+
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+
+  /* ✅ 헤더 높이만큼 전체를 아래로 (가림 방지 원탑) */
+  body{
+    padding-top: 96px !important;   /* 헤더 높이 = 96 */
+  }
+
+  /* ✅ 혹시 높이 흔들리면 고정 */
+  .header{
+    height: 96px !important;
+  }
+}
+
+@media (max-width:1024px){
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) :is(.sub2_title,.sub_title_wrap){
+    margin-bottom: 0 !important;      /* 기존 margin은 충돌 방지 */
+  }
+}
+
+/* =========================================
+   SUB1 ~ SUB6 타이틀 위/아래 공간 통일
+   (sub3 기준으로 맞춘 버전)
+   common.css 맨 아래
+========================================= */
+
+/* 1) 타이틀 래퍼에서만 공간 관리 */
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+:is(.sub2_title,.sub_title_wrap){
+
+  padding-top: 130px !important;   /* ✅ 타이틀 위 공간 */
+  padding-bottom: 90px !important; /* ✅ 타이틀 아래 공간 */
+
+  margin-bottom: 0 !important;
+}
+
+
+/* 2) sub_title 자체 여백 제거 (중복 방지) */
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .sub_title{
+
+  margin: 0 auto !important;
+}
+
+
+/* 3) section 시작 여백 제거 (타이틀과 간격 충돌 방지) */
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .section1{
+
+  margin-top: 0 !important;
+}
+
+
+/* 4) section_wrap 여백 제거 (겹침 방지) */
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .section_wrap{
+
+  margin-top: 0 !important;
+}
+
+
+
+
+/* =========================
+   TABLET MENU (최종) 481~1024
+========================= */
+@media (min-width: 481px) and (max-width: 1024px){
+
+  /* nav 숨김 + 햄버거 표시 */
+  .header .centerbox .nav{ display:none !important; }
+  .header .hamburger{ display:block !important; }
+
+  /* 헤더 고정이면 이거 유지(너 이미 fixed 쓰는 구간 있음) */
+  .header{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+
+  /* ✅ X 버튼은 항상 제일 위 */
+  .header .hamburger{
+    position: fixed !important;
+    left: 18px;
+    top: 22px;                 /* 태블릿 버튼 위치 */
+    z-index: 9999 !important;
+  }
+
+  /* ✅ 메뉴 패널 */
+  .header .hamburger .mobile_menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100dvh;
+    background: #185c67;
+    padding-top: 96px;         /* 태블릿 헤더 높이 */
+    box-shadow: 8px 0 24px rgba(0,0,0,.18);
+    z-index: 9000 !important;
+
+    display: block !important; /* 숨김은 transform으로만 */
+  }
+
+  /* ✅ 딤은 메뉴보다 아래 */
+  body.menu-open::before{
+    z-index: 8000 !important;
+  }
+
+  /* 메뉴 링크 */
+  .header .hamburger .mobile_gnb{ padding: 0 16px; }
+  .header .hamburger .mobile_gnb li a{
+    display:block;
+    padding:14px 12px;
+    color:#fff;
+    font-size:18px;
+    border-radius:10px;
+  }
+  .header .hamburger .mobile_gnb li a:hover{
+    background: rgba(255,255,255,.12);
+  }
+
+  /* 헤더가 fixed면 본문 밀기 */
+  body{ padding-top: 96px; }
+}
+
+/* ✅ 햄버거 버튼 클릭 안 되는 문제 응급패치 */
+@media (max-width: 1024px){
+
+  /* 헤더가 AOS transform 등으로 겹쳐도 버튼은 최상단 */
+  .header{
+    z-index: 2000 !important;
+  }
+
+  .header .hamburger{
+    position: fixed !important;
+    left: 18px !important;
+    top: 14px !important;           /* 모바일 기준 */
+    z-index: 99999 !important;      /* ✅ 최상단 */
+    pointer-events: auto !important; /* ✅ 클릭 강제 */
+  }
+
+  /* 태블릿은 top만 다르게 */
+  @media (min-width: 481px){
+    .header .hamburger{ top: 22px !important; }
+  }
+
+  .header .hamburger_btn{
+    pointer-events: auto !important; /* ✅ 클릭 강제 */
+    position: relative;
+    z-index: 99999 !important;
+  }
+
+  /* 혹시 메뉴 패널이 버튼 위를 덮는 경우 차단 */
+  .header .hamburger .mobile_menu{
+    z-index: 9000 !important;
+  }
+
+  /* 딤은 메뉴/버튼보다 아래 */
+  body.menu-open::before{
+    z-index: 8000 !important;
+  }
+}
+
+/* ✅ 딤(검은 화면) < 메뉴 < X버튼  순서 고정 */
+@media (max-width: 1024px){
+
+  /* 1) 메뉴 패널: 반드시 fixed + z-index 크게 */
+  .header .hamburger .mobile_menu{
+    position: fixed !important;
+    z-index: 9000 !important;
+  }
+
+  /* 2) 딤(검은 배경): 메뉴보다 아래 */
+  body.menu-open::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 8000 !important;
+  }
+
+  /* 3) X 버튼(햄버거): 제일 위 */
+  .header .hamburger{
+    position: fixed !important;
+    z-index: 9999 !important;
+  }
+}
+
+/* =========================================
+   FIX: 딤이 메뉴를 덮는 문제 (최종)
+   딤 < 메뉴 < X버튼
+========================================= */
+@media (max-width: 1024px){
+
+  /* ✅ AOS/transform 때문에 층이 꼬이는 거 방지 */
+  .header{
+    transform: none !important;
+    position: fixed !important;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 10000 !important; /* ✅ 딤보다 무조건 위 */
+  }
+
+  /* ✅ 딤(검은 화면)은 헤더보다 아래 */
+  body.menu-open::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 9990 !important;
+  }
+
+  /* ✅ 메뉴 패널은 딤보다 위 */
+  .header .hamburger .mobile_menu{
+    position: fixed !important;
+    z-index: 10010 !important;
+  }
+
+  /* ✅ X 버튼은 제일 위 */
+  .header .hamburger{
+    position: fixed !important;
+    z-index: 10020 !important;
+  }
+}

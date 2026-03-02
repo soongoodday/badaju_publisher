@@ -1,0 +1,1113 @@
+@charset "UTF-8";
+
+/* =========================
+   MOBILE (<= 480px)
+========================= */
+@media screen and (max-width: 480px) {
+
+  /* =========================
+    BASE
+  ========================= */
+  html, body{
+    font-family: 'ArittaDodum';
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  /* =========================
+    HEADER (mobile)
+  ========================= */
+  .header{
+    width: 100%;
+    height: 70px;
+    background: #185c67;
+
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+  }
+
+  .header .centerbox{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+  }
+
+  /* 데스크탑 nav/login 숨김 */
+  .header .centerbox .nav,
+  .header .centerbox .login_box{
+    display: none !important;
+  }
+
+  /* 로고 중앙 */
+  .header .centerbox h1.logo,
+  .header .centerbox .logo{
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header .centerbox h1.logo img{
+    width: 80px;
+    height: auto;
+    display: block;
+  }
+
+  /* 햄버거 버튼(왼쪽) */
+  .header .hamburger{
+    position: absolute;
+    left: 18px;
+    top: 0;
+    height: 70px;
+    width: 44px;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3000;
+  }
+
+  .header .hamburger .hamburger_btn{
+    width: 44px;
+    height: 44px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+    line-height: 0;
+  }
+
+  .header .hamburger .hamburger_btn img{
+    width: 28px;
+    height: auto;
+    display: block;
+  }
+
+  /* ✅ 슬라이드 메뉴(태블릿과 동일하게 body.menu-open 토글) */
+  .header .hamburger .mobile_menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 82vw;
+    max-width: 320px;
+    height: 100dvh;
+
+    background: #185c67;
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+
+    padding-top: 96px;
+    box-shadow: 8px 0 24px rgba(0, 0, 0, .18);
+
+    z-index: 2500;
+    display: block;
+  }
+
+  body.menu-open::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 2400;
+  }
+
+  body.menu-open .header .hamburger .mobile_menu{
+    transform: translateX(0);
+  }
+
+  .header .hamburger .mobile_gnb{
+    padding: 0 16px;
+  }
+
+  .header .hamburger .mobile_gnb li a{
+    display: block;
+    padding: 14px 12px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .header .hamburger .mobile_gnb li a:hover{
+    background: rgba(255,255,255,.12);
+  }
+
+  /* =========================
+    VISUAL (index mobile)
+  ========================= */
+  .visual{
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0;
+
+    position: relative;
+    left: 0;
+  }
+
+  .visual .visual1{ display: none; }
+  .visual .visual2{ display: block; }
+  .visual .visual2 img{
+    width: 100%;
+    display: block;
+  }
+
+  /* =========================
+    MAIN SECTION (index mobile)
+  ========================= */
+  .section{
+    margin-top: 70px; /* header 높이만큼 */
+    position: relative;
+  }
+
+  .section .section_wrap{
+    margin: 50px auto;
+  }
+
+  /* 섹션 공통 */
+  .section .section_wrap :is(.section1,.section2,.section3,.section4-1){
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .section .section_wrap :is(.section1,.section2,.section3,.section4-1) .section1_line{
+    display: none;
+  }
+
+  .section .section_wrap :is(.section1,.section2,.section3,.section4-1) .section1_contents{
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+
+  .section .section_wrap :is(.section1,.section2,.section3,.section4-1) .question{
+    font-size: 20px;
+    text-align: center;
+    color: #319EA3;
+    margin-top: 50px;
+  }
+
+  .section .section_wrap :is(.section1,.section2,.section3,.section4-1) .main_title{
+    width: 100%;
+    max-width: 330px;
+
+    font-size: 17px;
+    background: #319EA3;
+    color: #fff;
+
+    padding: 10px 12px;
+    box-sizing: border-box;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px auto 0;
+    line-height: 1.3;
+  }
+
+  .section .section_wrap :is(.section1,.section2,.section3,.section4-1) .main_line{
+    width: 17px;
+    height: 2px;
+    background: #319EA3;
+    margin: 20px auto 0;
+  }
+
+  .section .section_wrap :is(.section1,.section2,.section3,.section4-1) .main_section{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+
+    color: #5e5e5e;
+    line-height: 180%;
+    font-size: 15px;
+    letter-spacing: -1px;
+  }
+
+  /* section1-2 이미지 */
+  .section .section_wrap .section1-2{
+    width: 100%;
+    margin: 50px auto 0;
+  }
+
+  .section .section_wrap .section1-2 .section1-2_pic{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 10px 0;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+
+  .section .section_wrap .section1-2 .section1-2_pic li{ width: 100%; }
+  .section .section_wrap .section1-2 .section1-2_pic li img{
+    width: 100%;
+    display: block;
+  }
+
+  /* section2 ornament */
+  .section .section_wrap .section1-2 .section2-2_pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section .section_wrap .section1-2 .section2-2_pic :is(.ornament,.ornament2){
+    display: none;
+  }
+
+  .section .section_wrap .section1-2 .section2-2_pic .pic_ornament{
+    width: min(320px, 88vw);
+    aspect-ratio: 3 / 4;
+    margin: 0 auto;
+
+    border: 6px solid #319EA3;
+    border-radius: 999px;
+    overflow: hidden;
+
+    box-sizing: border-box;
+    background: #fff;
+    display: block;
+  }
+
+  .section .section_wrap .section1-2 .section2-2_pic .pic_ornament img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .section .section_wrap .section1-2 .juae{
+    color: #319EA3;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  /* section3(메인) */
+  .section .section_wrap .section3-1{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+
+  .section3-1{ position: relative; }
+  .section3-1 .section3_button{ display: none; }
+
+  .section .section_wrap .section3-1 .section3_pic{
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+  .section .section_wrap .section3-1 .section3_pic li{
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .section .section_wrap .section3-1 .section3_pic li img{
+    width: 100%;
+    display: block;
+  }
+
+  .section .section_wrap .section3-1 .section3_pic li:nth-child(7){
+    width: 100%;
+    height: 500px;
+
+    border: 1px solid #a5a5a5;
+    font-size: 20px;
+    color: #a5a5a5;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* section4 (FAQ) */
+  .section .section_wrap .section4{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .section_wrap .section4 .section4_box{
+    width: 100%;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    gap: 30px;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box{
+    width: 100%;
+    border: 1px solid #9f9f9f;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box .ask_titlebox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box .ask_titlebox .ask_title{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+
+    font-size: 15px;
+    font-weight: bold;
+    color: #434343;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box .ask_titlebox .ask_more{
+    width: 34px;
+    height: 30px;
+    line-height: 30px;
+
+    font-size: 15px;
+    color: #434343;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box .ask_line{
+    width: 90%;
+    height: 1px;
+    background: #9f9f9f;
+    margin: 0 auto;
+  }
+
+  .section_wrap .section4 .section4_box .ask_box .ask_section{
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #434343;
+  }
+
+  /* Q/A 아코디언 (지금 HTML에 맞춰 .ask_response / .qa_item.open) */
+  .section4 .ask_response{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    transition: max-height .25s ease, opacity .25s ease, padding .25s ease;
+    border: 1px solid #9f9f9f;
+  }
+
+  .section4 .qa_item.open .ask_response{
+    max-height: 1200px;
+    opacity: 1;
+    padding: 12px 18px;
+    overflow: visible;
+  }
+
+  .section4 .ask_response img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* 질문 박스 간격 축소 */
+  .section4 .qa_item{ margin-bottom: 6px; }
+  .section4 .ask_question{
+    padding: 6px 10px;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* section5(지도) 모바일 숨김 유지 */
+  .section_wrap .section5,
+  .section_middle_line.delete_line{
+    display: none;
+  }
+
+  /* 중간 구분선(모바일 메인 기본) */
+  .section_middle_line{
+    width: 87%;
+    height: 1px;
+    background: #a5a5a5;
+    margin: 50px auto; /* ✅ 요청값 */
+  }
+
+  /* =========================
+    FOOTER (mobile)
+  ========================= */
+  .footer_back{
+    width: 100%;
+    font-size: 0;
+  }
+  .footer_back img{
+    width: 100%;
+    display: block;
+  }
+
+  .footer{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background: #414141;
+    font-size: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .footer .footer_box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 10px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+  }
+
+  .footer .footer_box .copyright{
+    width: 100%;
+    font-size: 14px;
+    color: #A2A2A2;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .footer .footer_box .copyright span{
+    font-size: 17px;
+  }
+
+  .footer .footer_box .bank{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .footer .footer_box .bank .footer_iconbox{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .footer .footer_box .footer_iconbox :is(.insta_icon1,.insta_icon2){
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .footer_box .footer_iconbox :is(.insta_icon1,.insta_icon2) img{
+    width: 100%;
+    display: block;
+  }
+
+  .footer .footer_box .footer_iconbox :is(.insta_icon1,.insta_icon2) span{
+    font-size: 13px;
+    color: #a2a2a2;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  /* =========================
+     SUB PAGES COMMON (sub1~sub6)
+  ========================= */
+
+  /* ✅ fixed header 때문에 sub 페이지 전체를 한 번만 밀어줌 */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6){
+    padding-top: 0 !important;
+  }
+
+  /* 타이틀 래퍼(네 구조: .sub2_title / 또는 .sub_title_wrap) */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) :is(.sub2_title,.sub_title_wrap){
+    margin: 0 !important;
+    padding: 70px 20px 0 !important; /* 헤더 높이 */
+    box-sizing: border-box !important;
+  }
+
+  /* ✅ 서브 상단 타이틀 박스(폰트 포함) */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .sub_title{
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: 54px !important;
+    margin: 20px auto 0 !important;
+    padding: 0 12px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: 2px solid #319EA3 !important;
+    color: #319EA3 !important;
+
+    font-size: 18px !important;   /* ✅ 요청: 모바일 sub_title 폰트 */
+    font-weight: 700 !important;
+
+    box-sizing: border-box !important;
+  }
+
+  /* ✅ 요청: 모바일 sub1~sub6 section_wrap margin-top 50px */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .section_wrap{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    margin: 50px auto 0 !important; /* ✅ 요청값 */
+    top: 0 !important;
+  }
+
+  /* section 자체가 밀면 차단 */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .section{
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* ✅ 요청: sub1~sub6 section_middle_line 위아래 50 */
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .section_middle_line{
+    margin: 50px auto !important;
+  }
+
+  /* sub 공통: 타이틀라인 + 제목(기존 클래스 유지) */
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) :is(.sub1_section_line,.sub3_section_line){
+    width: 1px;
+    height: 50px;
+    background: #a5a5a5;
+    position: absolute;
+    left: 30px;
+    top: 0;
+  }
+
+  :is(.sub1,.sub2) .sub1_section_title,
+  :is(.sub3,.sub4,.sub5,.sub6) .sub3_section_title{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 150%;
+    color: #319EA3;
+    margin-left: 60px;
+  }
+
+  /* =========================
+     SUB1 (mobile)
+  ========================= */
+  .sub1 .section_wrap,
+  .sub1 .section,
+  .sub1 .section1,
+  .sub1 .section2{
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .sub1 .section1 .section_box,
+  .sub1 .section2 .section_box{
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .sub1 .sub1_section2_wrap{
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .sub1 .juae_picture{
+    width: 100%;
+    flex: none;
+    max-width: 100%;
+  }
+
+  .sub1 .juae_picture img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* sub1 모바일: 선 + 제목 정렬 */
+  .sub1 .sub1_titlebox{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .sub1_section_line{
+    display: block !important;
+    width: 2px !important;
+    height: 44px !important;
+    background: #a5a5a5 !important;
+    position: static !important;
+    flex: 0 0 auto;
+  }
+
+  .sub1_section_title{
+    margin: 0 !important;
+    margin-left: 0 !important;
+    line-height: 1.1;
+    font-size: 22px;
+  }
+
+  .sub1 .juae_sign{
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  /* =========================
+     SUB2 (mobile)
+     - sub2 특화(그리드/가로스크롤)만 유지
+  ========================= */
+  .sub2 .section_wrap,
+  .sub2 .sub2_title{
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  /* sub2 가로 스크롤 카드 */
+  .sub2 .section3_grid{
+    display: flex !important;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 0 20px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .sub2 .grid_item{
+    flex: 0 0 240px;
+    scroll-snap-align: start;
+  }
+
+  .sub2 .grid_img{
+    height: 300px;
+    border: 1px solid #cfcfcf;
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+  }
+
+  .sub2 .grid_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .sub2 .grid_img.coming{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a9a9a;
+  }
+
+  .sub2 .section3_grid::-webkit-scrollbar{
+    display: none;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  /* ✅ nav 숨기고 햄버거만 */
+  .header .centerbox .nav{ display:none !important; }
+  .header .hamburger{ display:block !important; }
+
+  /* ✅ 햄버거 버튼 레이어 */
+  .header .hamburger{
+    position:absolute;
+    left:18px;
+    top:14px;
+    z-index: 2001;
+  }
+
+  /* ✅ 메뉴 패널(왼쪽) */
+  .header .hamburger .mobile_menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 280px;
+    background: #185c67;
+
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    z-index: 2000;
+
+    padding-top: 70px; /* 모바일 헤더 높이에 맞게 */
+    box-shadow: 8px 0 24px rgba(0,0,0,.18);
+    display: block;
+  }
+
+  /* ✅ 딤은 메뉴 "뒤"에 */
+  body.menu-open::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 1999;      /* ✅ 메뉴보다 낮게 */
+  }
+
+  /* ✅ 열림 상태 */
+  body.menu-open .header .hamburger .mobile_menu{
+    transform: translateX(0);
+  }
+
+  /* 메뉴 링크 */
+  .header .hamburger .mobile_gnb{ padding: 0 16px; }
+  .header .hamburger .mobile_gnb li a{
+    display:block;
+    padding:14px 12px;
+    color:#fff;
+    font-size:18px;
+    border-radius:10px;
+  }
+}
+
+/* =========================================
+   SUB1 ~ SUB6 공통 타이틀 (sub4 모바일 스타일 통일)
+========================================= */
+
+@media (max-width: 480px){
+
+  /* 타이틀 박스 */
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_titlebox,.sub3_titlebox){
+
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 18px !important;          /* sub4 스타일 간격 */
+
+    padding: 0 24px !important;
+    margin-bottom: 28px !important;
+
+    box-sizing: border-box !important;
+
+    text-align: left !important;
+  }
+
+
+  /* 세로선 */
+
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_section_line,.sub3_section_line){
+
+    flex: 0 0 1px !important;
+
+    height: 52px !important;      /* sub4 모바일 높이 */
+
+    margin: 0 !important;
+  }
+
+
+  /* 타이틀 텍스트 */
+
+  :is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  :is(.sub1_section_title,.sub3_section_title){
+
+    width: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 20px !important;   /* sub4 모바일 크기 */
+
+    letter-spacing: 0 !important;
+
+    line-height: 1.35 !important;
+
+    white-space: normal !important;
+    word-break: keep-all !important;
+  }
+
+}
+
+/* =========================================
+   SUB1 ~ SUB6
+   모바일 section_middle_line 본문 폭 맞추기
+========================================= */
+
+@media (max-width: 480px){
+
+  body:is(.index,.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  .section_middle_line{
+
+    width: 100% !important;
+    margin: 60px auto !important;   /* 위아래 간격 유지 */
+
+    padding: 0 24px !important;     /* 본문 기준 */
+    box-sizing: border-box !important;
+
+  }
+
+
+  body:is(.index,.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+  .section_middle_line::before{
+
+    margin: 0 !important;           /* ← 핵심 (길이 늘어남) */
+
+    width: 100% !important;
+    height: 1px;
+
+    background: #a5a5a5;
+
+    display: block;
+    content:"";
+  }
+
+}
+
+.index .main_section {
+  margin-bottom: 130px;
+}
+
+.sub1_titlebox{
+  overflow: visible;    /* 혹시 hidden이면 풀어주기 */
+}
+
+.sub1_titlebox{
+  padding-left: 300px;  /* 공간을 만들어서 밀어줌 */
+  box-sizing: border-box;
+}
+
+.sub1_titlebox{
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;     /* 선-글자 간격 */
+}
+
+/* =========================
+   SUB6 모바일 좌우 여백 줄이기
+========================= */
+@media screen and (max-width: 480px) {
+
+.sub6 .section1,
+.sub6 .section_wrap,
+.sub6 .section_box {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+}
+
+
+
+
+/* =========================
+   MOBILE MENU (최종) <=480
+========================= */
+@media (max-width: 480px){
+
+  .header .centerbox .nav{ display:none !important; }
+  .header .hamburger{ display:flex !important; }
+
+  .header{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 2000;
+  }
+
+  /* ✅ X 버튼은 메뉴보다 위 */
+  .header .hamburger{
+    position: fixed !important;
+    left: 18px;
+    top: 14px;
+    z-index: 9999 !important;
+
+    height: 44px;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ✅ 메뉴 패널 */
+  .header .hamburger .mobile_menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 82vw;
+    max-width: 320px;
+    height: 100dvh;
+    background: #185c67;
+
+    padding-top: 70px; /* 모바일 헤더 높이 */
+    box-shadow: 8px 0 24px rgba(0,0,0,.18);
+
+    z-index: 9000 !important;
+    display: block !important;
+  }
+
+  body.menu-open::before{
+    z-index: 8000 !important;
+  }
+
+  .header .hamburger .mobile_gnb{ padding: 0 16px; }
+  .header .hamburger .mobile_gnb li a{
+    display:block;
+    padding:14px 12px;
+    color:#fff;
+    font-size:18px;
+    border-radius:10px;
+  }
+  .header .hamburger .mobile_gnb li a:hover{
+    background: rgba(255,255,255,.12);
+  }
+
+  /* fixed header면 본문 밀기(이미 너는 visual top:70도 쓰는 중이라 충돌 주의) */
+  body{ padding-top: 70px; }
+}
+
+/* ✅ 햄버거 버튼 클릭 안 되는 문제 응급패치 */
+@media (max-width: 1024px){
+
+  /* 헤더가 AOS transform 등으로 겹쳐도 버튼은 최상단 */
+  .header{
+    z-index: 2000 !important;
+  }
+
+  .header .hamburger{
+    position: fixed !important;
+    left: 18px !important;
+    top: 14px !important;           /* 모바일 기준 */
+    z-index: 99999 !important;      /* ✅ 최상단 */
+    pointer-events: auto !important; /* ✅ 클릭 강제 */
+  }
+
+  /* 태블릿은 top만 다르게 */
+  @media (min-width: 481px){
+    .header .hamburger{ top: 22px !important; }
+  }
+
+  .header .hamburger_btn{
+    pointer-events: auto !important; /* ✅ 클릭 강제 */
+    position: relative;
+    z-index: 99999 !important;
+  }
+
+  /* 혹시 메뉴 패널이 버튼 위를 덮는 경우 차단 */
+  .header .hamburger .mobile_menu{
+    z-index: 9000 !important;
+  }
+
+  /* 딤은 메뉴/버튼보다 아래 */
+  body.menu-open::before{
+    z-index: 8000 !important;
+  }
+}
+
+/* ✅ 딤(검은 화면) < 메뉴 < X버튼  순서 고정 */
+@media (max-width: 1024px){
+
+  /* 1) 메뉴 패널: 반드시 fixed + z-index 크게 */
+  .header .hamburger .mobile_menu{
+    position: fixed !important;
+    z-index: 9000 !important;
+  }
+
+  /* 2) 딤(검은 배경): 메뉴보다 아래 */
+  body.menu-open::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 8000 !important;
+  }
+
+  /* 3) X 버튼(햄버거): 제일 위 */
+  .header .hamburger{
+    position: fixed !important;
+    z-index: 9999 !important;
+  }
+}
+
+/* =========================================
+   FIX: 딤이 메뉴를 덮는 문제 (최종)
+   딤 < 메뉴 < X버튼
+========================================= */
+@media (max-width: 1024px){
+
+  /* ✅ AOS/transform 때문에 층이 꼬이는 거 방지 */
+  .header{
+    transform: none !important;
+    position: fixed !important;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 10000 !important; /* ✅ 딤보다 무조건 위 */
+  }
+
+  /* ✅ 딤(검은 화면)은 헤더보다 아래 */
+  body.menu-open::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 9990 !important;
+  }
+
+  /* ✅ 메뉴 패널은 딤보다 위 */
+  .header .hamburger .mobile_menu{
+    position: fixed !important;
+    z-index: 10010 !important;
+  }
+
+  /* ✅ X 버튼은 제일 위 */
+  .header .hamburger{
+    position: fixed !important;
+    z-index: 10020 !important;
+  }
+}

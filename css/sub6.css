@@ -1,0 +1,345 @@
+@charset "UTF-8";
+
+.sub6 .sub_title{
+  max-width: 1320px;
+  height: 66px;
+  border: 2px solid #319EA3;
+  margin: 130px auto 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #319EA3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub6 .section_wrap .section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FAQ 박스(서브6) - ask_box wrapper */
+.sub6 .section1-1,
+.sub6 .section1-2{
+
+}
+
+.sub6 .section1-1 .section1_box,
+.sub6 .section1-2 .section1_box{
+  width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+}
+
+.sub6 .section1-1 .ask_box,
+.sub6 .section1-2 .ask_box{
+  width: 1320px;
+  border: 1px solid #9f9f9f;
+  padding-bottom: 50px;
+}
+
+/* sub6 제목줄/가로선 */
+.sub6 .ask_titlebox{
+  width: 1136px;
+  display: flex;
+  justify-content: space-around;
+  margin: 65px auto 0;
+}
+.sub6 .ask_title{
+  width: 1320px;
+  height: 30px;
+  font-size: 18px;
+  color: #434343;
+  font-weight: bold;
+}
+.sub6 .ask_more{
+  width: 34px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #434343;
+}
+.sub6 .ask_line{
+  width: 1136px;
+  height: 1px;
+  background: #9f9f9f;
+  margin: 8px auto 0;
+}
+
+/* sub6 FAQ: wrapper 패딩 제거(너가 원인으로 잡았던 부분) */
+.sub6 .ask_section .ask1_box,
+.sub6 .ask_section .ask2_box,
+.sub6 .ask_section .ask3_box,
+.sub6 .ask_section .ask4_box,
+.sub6 .ask_section .ask5_box{
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 질문/답변 공통 */
+.sub6 .ask_question1,
+.sub6 .ask_question2,
+.sub6 .ask_question3,
+.sub6 .ask_question4,
+.sub6 .ask_question5{
+  background: #f3f3f3;
+  padding: 12px 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+
+.sub6 .ask_response1,
+.sub6 .ask_response2,
+.sub6 .ask_response3,
+.sub6 .ask_response4,
+.sub6 .ask_response5{
+  border: 1px solid #9f9f9f;
+  max-height: 0;
+  padding: 0 18px;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.sub6 .ask1_box_li:hover .ask_response1,
+.sub6 .ask2_box_li:hover .ask_response2,
+.sub6 .ask3_box_li:hover .ask_response3,
+.sub6 .ask4_box_li:hover .ask_response4,
+.sub6 .ask5_box_li:hover .ask_response5{
+  max-height: 1000px;
+  opacity: 1;
+  padding: 12px 18px;
+  transition: 0.3s;
+}
+
+/* direct ask form */
+.sub6 .direct_askbox{
+  width: 1320px;
+  height: 890px;
+  border: 1px solid #9F9F9F;
+  margin-top: 130px;
+}
+
+.sub6 .direct_askbox .direct_askbox_all{
+  width: 1136px;
+  margin: 0 auto;
+  display: flex;
+}
+
+/* (나머지 input width/height 등은 너 원본 그대로 유지해도 OK) */
+
+/* =========================================
+   모바일
+========================================= */
+
+@media (max-width:480px){
+
+.sub1 .sub1_titlebox,
+.sub2 .sub1_titlebox,
+.sub3 .sub1_titlebox,
+.sub4 .sub1_titlebox,
+.sub5 .sub1_titlebox,
+.sub6 .sub1_titlebox{
+
+  padding:0 18px !important;
+  gap:12px !important;
+  margin-bottom:22px !important;
+
+}
+
+
+.sub1 .sub1_section_line,
+.sub2 .sub1_section_line,
+.sub3 .sub1_section_line,
+.sub4 .sub1_section_line,
+.sub5 .sub1_section_line,
+.sub6 .sub1_section_line{
+
+  height:44px !important;
+
+}
+
+
+.sub1 .sub1_section_title,
+.sub2 .sub1_section_title,
+.sub3 .sub1_section_title,
+.sub4 .sub1_section_title,
+.sub5 .sub1_section_title,
+.sub6 .sub1_section_title{
+
+  font-size:20px !important;
+  letter-spacing:0px !important;
+
+}
+
+}
+
+/* =========================================
+   SUB6 FAQ 2개 박스 = INDEX(section4) 스타일 이식본
+   - PC: 2개 나란히
+   - 1024px 이하: 세로 1열 스택
+   - 제목/선/리스트 폭 동일(안쪽 기둥)
+   sub6.css 맨 아래에 붙여넣기
+========================================= */
+
+/* ✅ 0) sub6 두 박스 래퍼를 index처럼: max-width + padding + flex */
+.sub6 :is(.section1-1 .section1_box, .section1-2 .section1_box){
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin: 60px auto 0 !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+
+  display: flex !important;
+  gap: 24px !important;
+}
+
+/* ✅ 1) ask_box = index ask_box (flex 1, padding 상하, overflow) */
+.sub6 :is(.section1-1 .ask_box, .section1-2 .ask_box){
+  flex: 1 !important;
+  min-width: 0 !important;
+  width: auto !important;
+
+  border: 1px solid #9f9f9f !important;
+  padding: 50px 0 !important;   /* index와 동일 */
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* ✅ 2) 제목줄/선/리스트 = “안쪽 기둥” 폭으로 통일 (index 방식) */
+.sub6 :is(.section1-1 .ask_box, .section1-2 .ask_box){
+  --inner-w: calc(100% - 80px);   /* 좌우 40px씩 효과 */
+}
+
+.sub6 :is(.section1-1 .ask_box .ask_titlebox, .section1-2 .ask_box .ask_titlebox){
+  width: var(--inner-w) !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+
+  /* sub6 원래 margin-top 65px 제거 */
+  margin-top: 0 !important;
+}
+
+.sub6 :is(.section1-1 .ask_box .ask_line, .section1-2 .ask_box .ask_line){
+  width: var(--inner-w) !important;
+  margin: 14px auto 0 !important;
+  height: 1px !important;
+  background: #9f9f9f !important;
+}
+
+.sub6 :is(.section1-1 .ask_box .ask_section, .section1-2 .ask_box .ask_section){
+  width: var(--inner-w) !important;
+  margin: 24px auto 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ✅ 3) ul 기본값 제거 (index와 동일하게) */
+.sub6 .ask_section ul{
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* ✅ 4) 질문(Q) = index 느낌 */
+.sub6 :is(.ask_question1,.ask_question2,.ask_question3,.ask_question4,.ask_question5){
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+
+  margin: 0 !important;
+  padding: 12px 18px !important;
+  background: #f3f3f3 !important;
+
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* ✅ 5) 답변(A) = index 느낌 */
+.sub6 :is(.ask_response1,.ask_response2,.ask_response3,.ask_response4,.ask_response5){
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+
+  margin: 0 !important;
+  border: 1px solid #9f9f9f !important;
+  border-top: 0 !important;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  padding: 0 18px !important;
+  transition: max-height .25s ease, opacity .25s ease, padding .25s ease;
+}
+
+.sub6 :is(.ask1_box_li:hover .ask_response1,
+          .ask2_box_li:hover .ask_response2,
+          .ask3_box_li:hover .ask_response3,
+          .ask4_box_li:hover .ask_response4,
+          .ask5_box_li:hover .ask_response5){
+  max-height: 1000px;
+  opacity: 1;
+  padding: 12px 18px !important;
+}
+
+/* ✅ 6) 1024px 이하 = index처럼 1열 스택 */
+@media (max-width: 1024px){
+
+  .sub6 :is(.section1-1 .section1_box, .section1-2 .section1_box){
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 18px !important;
+    padding: 0 24px !important;
+  }
+
+  .sub6 :is(.section1-1 .ask_box, .section1-2 .ask_box){
+    width: 100% !important;
+  }
+}
+
+/* ✅ 7) 모바일에서는 질문 줄바꿈(읽기 편하게) */
+@media (max-width: 480px){
+
+  .sub6 :is(.section1-1 .section1_box, .section1-2 .section1_box){
+    padding: 0 18px !important;
+    margin-top: 40px !important;
+  }
+
+  .sub6 :is(.ask_question1,.ask_question2,.ask_question3,.ask_question4,.ask_question5){
+    white-space: normal !important;
+    text-overflow: clip !important;
+    overflow: visible !important;
+    line-height: 1.6 !important;
+    padding: 12px 14px !important;
+  }
+
+  .sub6 :is(.ask_response1,.ask_response2,.ask_response3,.ask_response4,.ask_response5){
+    padding: 0 14px !important;
+  }
+  .sub6 :is(.ask1_box_li:hover .ask_response1,
+            .ask2_box_li:hover .ask_response2,
+            .ask3_box_li:hover .ask_response3,
+            .ask4_box_li:hover .ask_response4,
+            .ask5_box_li:hover .ask_response5){
+    padding: 12px 14px !important;
+  }
+}
+
+.sub6 .footer_back {
+  margin-top: 130px;
+}
+
+.sub2_title {
+  margin-bottom: 0 !important;
+}
+

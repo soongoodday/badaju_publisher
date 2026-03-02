@@ -1,0 +1,573 @@
+@charset "UTF-8";
+
+/* =========================
+   SUB2 (PC)
+========================= */
+
+/* 섹션 공통 */
+.sub2 .section_wrap .section {
+  margin: 0 auto;
+}
+
+/* 섹션1 */
+.sub2 .section_wrap .section .section1 { margin: 0 auto; }
+
+.sub2 .section_wrap .section .section1 .section_box {
+  width: 1320px;
+  margin: 0 auto;
+}
+
+/* 섹션2 */
+.sub2 .section_wrap .section .section2 {
+  width: 1320px;
+  margin: 0 auto;
+}
+
+.sub2 .section_wrap .section .section2 .section_box .sub1_titlebox {
+  display: flex;
+  margin-bottom: 90px;
+}
+
+/* ====== 슬라이드 영역(표지/설명) : PC는 4개 가로 정렬 ====== */
+
+/* 버튼(좌/우) */
+.sub2 .section3_button{
+  width: 1320px;
+  margin: 0 auto 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+
+/* 표지 리스트 */
+.sub2 .section3_pic{
+  width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* li와 span(세로선)이 섞여 있어도 PC에선 일단 같이 배치 */
+.sub2 .section3_pic > li{
+  width: 25%;
+  list-style: none;
+}
+
+.sub2 .section3_pic > li img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 세로 구분선 */
+.sub2 .section3_pic > span.section_vertical_line{
+  width: 1px;
+  height: 220px;
+  background: #d9d9d9;
+  display: block;
+}
+
+/* 설명 4칸 */
+.sub2 .section3_section{
+  width: 1320px;
+  margin: 24px auto 0;
+  display: flex;
+  gap: 18px;
+}
+
+.sub2 .section_part1,
+.sub2 .section_part2,
+.sub2 .section_part3,
+.sub2 .section_part4{
+  width: 25%;
+}
+
+/* 설명 박스 내부 줄바꿈 안정 */
+.sub2 .sectionbox_contents{
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* =========================
+   section3_grid (PC) - index 스타일 이식용
+========================= */
+.sub2 .section3_grid{
+  width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.sub2 .section3_grid .grid_img{
+  border: 1px solid #cfcfcf;
+  background: #fff;
+}
+
+.sub2 .section3_grid .grid_img img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sub2 .section3_grid .grid_img.coming{
+  height: 520px;            /* 표지 높이에 맞춰 조절 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9a9a9a;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+.sub2 .section3_grid .grid_text{
+  padding-top: 14px;
+}
+
+.sub2 .section3_grid .t_title{
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.sub2 .section3_grid .t_line{
+  width: 100%;
+  height: 1px;
+  background: #bfbfbf;
+  margin: 12px 0;
+}
+
+.sub2 .section3_grid .t_author{
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.sub2 .section3_grid .t_desc{
+  font-size: 15px;
+  line-height: 170%;
+  color: #444;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* =========================
+   section3_grid 정렬 고정 (PC)
+   표지 안 잘리는 버전
+========================= */
+
+/* 전체 4열 */
+.sub2 .section3_grid{
+  width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+/* 카드 구조 */
+.sub2 .section3_grid .grid_item{
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ 표지 영역 높이 통일 */
+.sub2 .section3_grid .grid_img{
+  height: 520px;
+  border: 1px solid #cfcfcf;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ 표지 안 잘리게 */
+.sub2 .section3_grid .grid_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* COMING SOON 카드 */
+.sub2 .section3_grid .grid_img.coming{
+  height: 520px;
+  color: #9a9a9a;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+/* 텍스트 영역 */
+.sub2 .section3_grid .grid_text{
+  margin-top: 16px;
+}
+
+/* 제목 */
+.sub2 .section3_grid .t_title{
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* 구분선 */
+.sub2 .section3_grid .t_line{
+  width: 100%;
+  height: 1px;
+  background: #bfbfbf;
+  margin: 12px 0;
+}
+
+/* 저자 */
+.sub2 .section3_grid .t_author{
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 설명 */
+.sub2 .section3_grid .t_desc{
+  font-size: 15px;
+  line-height: 170%;
+  color: #444;
+}
+
+/* =========================
+   제목 아래 구분선 (왼쪽처럼)
+========================= */
+
+.sub2 .section3_grid .t_line{
+  width: 100%;
+  height: 1px;
+  background: #bfbfbf;
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+/* =========================
+   SUB2 섹션2(연재 웹소설) 구분선 - 왼쪽처럼
+========================= */
+
+/* 섹션2 텍스트 박스 내부 정리 */
+.sub2 .section2 .sectionbox_contents{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 지금 HTML에 있는 'sectionbox_line'을 왼쪽 스타일 구분선으로 */
+.sub2 .section2 .sectionbox_line{
+  width: 100%;
+  height: 1px;
+  background: #bfbfbf;
+  margin: 12px 0 14px;   /* 왼쪽처럼 간격 */
+}
+
+/* 제목/저자/설명 간격도 왼쪽처럼 맞추기 (선택) */
+.sub2 .section2 .sectionbox_contents > li:nth-child(1){
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.sub2 .section2 .sectionbox_contents > li:nth-child(3){
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.sub2 .section2 .sectionbox_contents > li:nth-child(4){
+  font-size: 15px;
+  line-height: 170%;
+  color: #444;
+}
+
+/* PC: 그리드 컨테이너 폭 살짝 줄이기 */
+.sub2 .section3_grid{
+  width: 1260px;   /* 1320 → 1260 */
+}
+
+/* =========================
+   SUB2: 기준폭 통일(=middle_line 기준으로 딱 맞추기)
+========================= */
+:root{
+  --sub2-w: 1320px;   /* 여기 값을 '선 기준'으로 쓰기 */
+}
+
+/* 1) section_box를 기준폭으로 중앙 고정 */
+.sub2 .section1 .section_box,
+.sub2 .section2 .section_box{
+  width: 100% !important;
+  max-width: var(--sub2-w) !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+/* 2) 책 그리드도 같은 폭으로 중앙 고정 */
+.sub2 .section3_grid{
+  width: 100% !important;
+  max-width: var(--sub2-w) !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+/* sub2 책 이미지 박스 */
+.sub2 .book_img {
+  width: 100%;
+  height: auto;        /* 고정높이 제거 */
+}
+
+/* 이미지 비율 유지 */
+.sub2 .book_img img {
+  width: 100%;
+  height: auto;        /* 핵심 */
+  display: block;
+}
+
+/* =========================
+   SUB2 section3_grid -> index(section3-1)와 동일하게 강제 통일
+   기준: 박스(회색 테두리) aspect-ratio: 227/320
+========================= */
+
+/* 1) 그리드: index랑 동일한 grid 설정 */
+.sub2 .section3_grid{
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin: 60px auto 0 !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+}
+
+/* 2) 카드(= li) : index book_card처럼 */
+.sub2 .section3_grid .grid_item,
+.sub2 .section3_grid > li{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  min-width: 0 !important;
+  list-style: none !important;
+}
+
+/* 3) 회색 테두리 박스: index book_thumb처럼 (✅여기가 핵심) */
+.sub2 .section3_grid .grid_img{
+  width: 100% !important;
+  aspect-ratio: 227 / 320 !important;  /* ✅ index와 동일 */
+  overflow: hidden !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid #a5a5a5 !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+
+  height: auto !important;             /* sub2에 있던 height:520px 제거 */
+}
+
+/* 4) 링크가 있다면: index처럼 꽉 채우기 */
+.sub2 .section3_grid .grid_img > a{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* 5) 이미지: index처럼 contain으로 “잘림 없이” + 중앙 */
+.sub2 .section3_grid .grid_img img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;      /* ✅ index와 동일 (잘림 방지) */
+  object-position: center !important;
+  display: block !important;
+}
+
+/* 6) COMING SOON: index처럼 정중앙 */
+.sub2 .section3_grid .grid_img.coming{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  font-size: 20px !important;
+  color: #a5a5a5 !important;
+  font-weight: bold !important;
+  letter-spacing: 1px !important;
+
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* 7) 텍스트 영역도 index 톤으로 */
+.sub2 .section3_grid .grid_text{
+  width: 100% !important;
+  padding-top: 0 !important;
+  color: #434343 !important;
+}
+
+.sub2 .section3_grid .t_title{
+  font-weight: bold !important;
+  font-size: 16px !important;
+  color: #222 !important;
+}
+
+.sub2 .section3_grid .t_line{
+  width: 100% !important;
+  height: 1px !important;
+  background: #a5a5a5 !important;
+  margin: 8px 0 !important;
+}
+
+.sub2 .section3_grid .t_author{
+  font-size: 15px !important;
+  margin-bottom: 6px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.sub2 .section3_grid .t_desc{
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  letter-spacing: -0.5px !important;
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
+  color: #444 !important;
+}
+
+/* 비워둔 카드(coming) 스타일 */
+.sub2 .grid_img.coming {
+  border: 1px solid #ddd;
+  color: #b9b9b9;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: #fff;
+}
+
+/* 비워둔 카드 텍스트 라인도 보기 싫으면 t_line만 남기고 나머지 숨김(선택) */
+.sub2 .grid_item .grid_text:has(.t_title:empty) .t_author,
+.sub2 .grid_item .grid_text:has(.t_title:empty) .t_desc {
+  display: none;
+}
+
+/* ✅ section_box가 4단 그리드 컨테이너 */
+.sub2 .section_box.section3_grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;   /* 너가 쓰는 값 있으면 그걸로 */
+  row-gap: 20px;
+}
+
+/* ✅ 제목 박스/버튼은 4칸 전체 먹게 (위 섹션과 동일 핵심) */
+.sub2 .section_box.section3_grid .sub1_titlebox{
+  grid-column: 1 / -1;
+}
+
+.sub2 .section_box.section3_grid .section3_button{
+  grid-column: 1 / -1;
+}
+
+/* ✅ 카드(그리드 아이템)는 각 1칸씩 */
+.sub2 .section_box.section3_grid .grid_item{
+  width: 100%;
+}
+
+/* 1) 선 자체는 여백 없이 딱 선만 */
+.section_middle_line{
+  margin: 130px auto !important;
+  padding: 0 !important;           /* ✅ 선 위/아래 여백 제거 */
+  max-width: 1320px !important;
+  background: transparent !important;
+  border: 0 !important;
+  height: auto !important;
+}
+
+.section_middle_line::before{
+  content:"";
+  display:block;
+  height:1px;
+  background:#a5a5a5;
+  margin:0 24px;
+}
+
+/* 2) 선 아래 간격을 130px로 고정 (원하는 값) */
+.sub2 .section_wrap .section .section2 .section_box .sub1_titlebox{
+  margin-top: 130px !important;    /* ✅ 선 아래 공간 = 130px */
+}
+
+.t_desc {
+  margin-bottom: 130px;
+}
+
+/* ✅ 두 섹션 제목 시작점 통일 */
+.sub2 .section1 .section_box,
+.sub2 .section2 .section_box{
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+}
+
+.sub2 .section3_grid {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sub2 .section3_grid{
+  margin-top: 60px;
+  margin-bottom: 0;  /* ← 아래 여백 제거 */
+}
+
+.sub2 .footer_back {
+  margin-top: 130px;
+}
+
+/* =========================================
+   모바일
+========================================= */
+
+@media (max-width:480px){
+
+.sub1 .sub1_titlebox,
+.sub2 .sub1_titlebox,
+.sub3 .sub1_titlebox,
+.sub4 .sub1_titlebox,
+.sub5 .sub1_titlebox,
+.sub6 .sub1_titlebox{
+
+  padding:0 18px !important;
+  gap:12px !important;
+  margin-bottom:22px !important;
+
+}
+
+
+.sub1 .sub1_section_line,
+.sub2 .sub1_section_line,
+.sub3 .sub1_section_line,
+.sub4 .sub1_section_line,
+.sub5 .sub1_section_line,
+.sub6 .sub1_section_line{
+
+  height:44px !important;
+}
+
+
+.sub1 .sub1_section_title,
+.sub2 .sub1_section_title,
+.sub3 .sub1_section_title,
+.sub4 .sub1_section_title,
+.sub5 .sub1_section_title,
+.sub6 .sub1_section_title{
+
+  font-size:20px !important;
+  letter-spacing:0px !important;
+
+}
+
+}

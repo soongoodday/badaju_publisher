@@ -1,0 +1,360 @@
+@charset "UTF-8";
+
+/* 공통 박스 */
+.sub3 .section_box{
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.sub3 .sub1_titlebox{
+  display: flex;
+  width: 650px;
+  height: 90px;
+  margin-bottom: 90px;
+}
+
+.sub3 .sub3_sbox{
+  width: 650px;
+  margin-top: 50px;
+}
+
+.sub3 .sub3_sbox_title{
+  width: 654px;
+  height: 40px;
+  background: #319EA3;
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+}
+.sub3 .sub3_sbox_section{
+  font-size: 16px;
+  width: 654px;
+  color: #5E5E5E;
+  line-height: 190%;
+  margin-top: 30px;
+  letter-spacing: -1px;
+}
+
+/* 섹션별 높이(원본 유지) */
+.sub3 .section3{ height: auto; }
+.sub3 .sub3_img{ width: 100%; }
+
+/* sub3 공통: 좌우 2컬럼 래퍼 */
+.sub3 .section_box{
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 30px;          /* 좌우 여백 */
+  box-sizing: border-box;
+
+  display: flex;
+  gap: 40px;                /* 좌우 간격 */
+  align-items: flex-start;
+}
+
+/* 좌측 텍스트 */
+.sub3 .sub3_leftbox{
+  flex: 1 1 0;              /* ✅ 남는 공간 채우고 줄어들기 */
+  min-width: 0;             /* ✅ 텍스트 때문에 폭 안 줄어드는 문제 방지 */
+}
+
+/* 우측 이미지 */
+.sub3 .sub3_rightbox{
+  flex: 0 0 420px;          /* ✅ PC 기준 이미지 폭 */
+}
+
+.sub3 .sub3_img img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   SUB3 반응형
+   1320px 이하 → 1열
+========================= */
+
+@media (max-width: 1320px){
+
+  .sub3 .section_box{
+    flex-direction: column;   /* ✅ 세로 배치 */
+    gap: 40px;
+  }
+
+  /* 왼쪽 텍스트 */
+  .sub3 .sub3_leftbox{
+    width: 100%;
+  }
+
+  /* 오른쪽 이미지 */
+  .sub3 .sub3_rightbox{
+    width: 100%;
+    max-width: 600px;   /* 가운데 정렬용 (원하면 제거 가능) */
+    margin: 0 auto;
+  }
+
+  .sub3 .sub3_img img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+}
+
+/* =========================
+   SUB3 1320↓ 최종 덮어쓰기 (반드시 파일 맨 아래)
+========================= */
+@media (max-width: 1320px){
+
+  /* 1) 섹션 컨테이너: 유동폭 + 가운데 */
+  .sub3 .section_box{
+    width: 100% !important;
+    max-width: 900px;            /* ✅ '본문이 가운데' 느낌. 760~960 취향 */
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    box-sizing: border-box;
+    flex-direction: column !important;
+    align-items: center !important;  /* ✅ 덩어리 자체를 가운데로 */
+  }
+
+  /* 2) 왼쪽 텍스트 박스도 가운데 폭에 맞추기 */
+  .sub3 .sub3_leftbox{
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+  }
+
+  /* 3) 제목(라인+텍스트) 고정폭 제거 + 간격 통일 */
+  .sub3 .sub1_titlebox{
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 40px !important;     /* ✅ 위 여백 줄이고 싶으면 여기 */
+    display: flex !important;
+    align-items: center !important;
+    gap: 24px !important;          /* ✅ 라인-텍스트 간격 (section2처럼) */
+  }
+
+  /* 4) 텍스트 박스들 고정폭(650~654) 제거 */
+  .sub3 .sub3_sbox,
+  .sub3 .sub3_sbox_title,
+  .sub3 .sub3_sbox_section{
+    width: 100% !important;
+    max-width: 900px !important;
+    box-sizing: border-box;
+  }
+
+  /* 5) 오른쪽 이미지 박스: 가운데 + 적당한 최대폭 */
+  .sub3 .sub3_rightbox{
+    width: 100% !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+    flex: none !important;
+  }
+
+  .sub3 .sub3_img img{
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  /* 6) 섹션 높이 고정 해제(중요!) */
+  .sub3 .section3{
+    height: auto !important;         /* ✅ 630px 고정이면 중간이 비거나 잘림 */
+  }
+}
+
+/* ✅ 진단용: section_box 내부 아래 여백 만드는 padding/margin 제거 */
+.sub3 .section_box{
+  padding-bottom: 130px !important;
+  margin-bottom: 0 !important;
+}
+
+/* section_box 아래 130px 제거 */
+.sub3 .section_box{
+  padding-bottom: 0 !important;
+}
+
+.sub3 .footer_back {
+  margin-top: 130px;
+}
+
+.sub3 .section_box {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ✅ SUB3: section1~section4 본문 가운데 덩어리 만들기 */
+body.sub3 .section_wrap .section 
+:is(.section1,.section2,.section3,.section4) 
+.section_box{
+
+  width: 100% !important;
+  max-width: 900px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ✅ 왼쪽 텍스트 박스 좌우 margin 제거 (가운데 맞추기 핵심) */
+body.sub3 .section_wrap .section 
+:is(.section1,.section2,.section3,.section4) 
+.section_box .sub3_leftbox{
+
+  width: 100% !important;
+  max-width: none !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+
+/* ✅ 안쪽 고정폭 제거 */
+body.sub3 .section_wrap .section 
+:is(.section1,.section2,.section3,.section4) 
+.section_box 
+:is(.sub3_sbox,.sub3_sbox_title,.sub3_sbox_section){
+
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* 1) 선 자체는 여백 없이 딱 선만 */
+.section_middle_line{
+  margin: 130px auto !important;
+  padding: 0 !important;           /* ✅ 선 위/아래 여백 제거 */
+  max-width: 1320px !important;
+  background: transparent !important;
+  border: 0 !important;
+  height: auto !important;
+}
+
+.section_middle_line::before{
+  content:"";
+  display:block;
+  height:1px;
+  background:#a5a5a5;
+  margin:0 24px;
+}
+
+.section4 {
+  padding: 0 24px;
+}
+
+/* =========================================
+   SUB3: 오른쪽(정상)처럼 정렬 강제 (PC)
+   - 왼쪽 컬럼 654px 기준으로 바/텍스트 정렬
+========================================= */
+@media (min-width: 1025px){
+
+  /* 1) sub3 본문 2컬럼 구조를 안정화 (이미 되어있어도 덮어씀) */
+  body.sub3 .section_box{
+    width: 100% !important;
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+    padding: 0 30px !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    justify-content: center !important;  /* ✅ 덩어리 자체를 가운데로 */
+    align-items: flex-start !important;
+    gap: 40px !important;
+  }
+
+  body.sub3 .sub3_leftbox{
+    flex: 0 0 654px !important;
+    max-width: 654px !important;
+    min-width: 0 !important;
+  }
+
+  body.sub3 .sub3_rightbox{
+    flex: 0 0 520px !important;     /* 포스터/이미지 칸 (원하면 448~560 조절) */
+    max-width: 520px !important;
+    min-width: 0 !important;
+  }
+
+  /* 2) ✅ 문제의 핵심: “청록색 가로 바(작사/노래 …)”를
+        왼쪽 컬럼 폭(654px) 기준으로 100%로 늘리고,
+        가운데정렬(margin:auto) 같은 걸 전부 차단 */
+  body.sub3 .sub3_leftbox :is(.sub3_bar, .sub3_midbar, .sub3_info_bar, .sub3_title_bar){
+    width: 100% !important;
+    max-width: 654px !important;
+
+    margin: 50px 0 30px 0 !important;  /* ✅ sub4처럼 위/아래 간격 */
+    text-align: center !important;
+
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3) 혹시 위 바가 div/span 어떤 태그든 “auto로 가운데 보내는” 규칙이 있으면 강제 제거 */
+  body.sub3 .sub3_leftbox :is(.sub3_bar, .sub3_midbar, .sub3_info_bar, .sub3_title_bar){
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* =========================================
+   모바일
+========================================= */
+
+@media (max-width:480px){
+
+.sub1 .sub1_titlebox,
+.sub2 .sub1_titlebox,
+.sub3 .sub1_titlebox,
+.sub4 .sub1_titlebox,
+.sub5 .sub1_titlebox,
+.sub6 .sub1_titlebox{
+
+  padding:0 18px !important;
+  gap:12px !important;
+  margin-bottom:22px !important;
+
+}
+
+
+.sub1 .sub1_section_line,
+.sub2 .sub1_section_line,
+.sub3 .sub1_section_line,
+.sub4 .sub1_section_line,
+.sub5 .sub1_section_line,
+.sub6 .sub1_section_line{
+
+  height:44px !important;
+
+}
+
+
+.sub1 .sub1_section_title,
+.sub2 .sub1_section_title,
+.sub3 .sub1_section_title,
+.sub4 .sub1_section_title,
+.sub5 .sub1_section_title,
+.sub6 .sub1_section_title{
+
+  font-size:20px !important;
+  letter-spacing:0px !important;
+
+}
+
+}
+
+/* sub1 ~ sub6 콘텐츠 시작 부분 위 간격 */
+.sub1 .section1,
+.sub2 .section1,
+.sub3 .section1,
+.sub4 .section1,
+.sub5 .section1,
+.sub6 .section1 {
+  margin-top: 130px;
+}

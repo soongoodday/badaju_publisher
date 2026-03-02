@@ -1,0 +1,548 @@
+@charset "UTF-8";
+
+/* =========================
+   BASE (공통)
+========================= */
+body { font-family: 'ArittaDodum'; }
+html, body { overflow-x: hidden; } /* 100vw/풀블리드 사용 시 가로스크롤 방지 */
+
+:root{
+  --page-bg: #ffffff;   /* index 배경색 */
+  --text: #5E5E5E;      /* index 기본 글자색 */
+  --brand: #185c67;
+  --accent: #319EA3;
+  --line: #a5a5a5;
+}
+
+body{
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+/* =========================
+   HEADER (공통)
+========================= */
+.header{
+  width: 100%;
+  background: var(--brand);
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.header .centerbox{
+  max-width: 1320px;
+  width: 100%;
+  height: 96px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .hamburger{ display: none; }
+.header .hamburger .mobile_menu{ display: none; }
+
+.header .centerbox .logo{
+  display: flex;
+  justify-self: start;
+  width: 107px;
+  height: 34px;
+}
+.header .centerbox .logo img{ width: 100%; }
+
+.header .centerbox .nav{
+  width: 561px;
+  flex-grow: 1;
+  justify-content: end;
+  display: flex;
+}
+
+/* 로그인 박스 */
+.header .centerbox .login_box{
+  width: 84px;
+  height: 30px;
+  background: #b3cbcf;
+  border-radius: 5px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .centerbox .login_box a{ color: var(--brand); }
+.header .centerbox .login_box:hover{ background: var(--accent); }
+.header .centerbox .login_box:hover a{ color: #fff; }
+
+/* gnb */
+.header .centerbox .nav .gnb{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 16px;
+  width: 60%;
+}
+
+.header .centerbox .nav .gnb li{
+  position: relative;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.header .centerbox .nav .gnb li a{
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+.header .centerbox .nav .gnb li:hover a{ color: var(--accent); }
+
+/* lnb */
+.header .centerbox .nav .gnb li .lnb{
+  position: absolute;
+  z-index: 10;
+  top: 150%;
+  height: 0;
+  width: 100%;
+  background: var(--accent);
+  overflow: hidden;
+  transition: 0.3s;
+}
+.header .centerbox .nav .gnb li .lnb li{
+  font-size: 16px;
+  line-height: 50px;
+}
+.header .centerbox .nav .gnb li .lnb li a{
+  color: #fff;
+  display: block;
+}
+.header .centerbox .nav .gnb li:hover .lnb{ height: 200px; }
+.header .centerbox .nav .gnb li .lnb li a:hover{
+  background: var(--brand);
+  color: #fff;
+}
+
+/* gnb 구분선 */
+.header .centerbox .nav .gnb li::before{
+  content: '';
+  width: 1px;
+  height: 16px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.header .centerbox .nav .gnb li:last-child::before{ display: none; }
+
+/* =========================
+   COMMON SECTION WIDTH (공통)
+========================= */
+.section1,
+.section2,
+.section3{
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   FOOTER (공통)
+========================= */
+.footer_back,
+.footer{
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+}
+
+.footer_back img{
+  width: 100% !important;
+  display: block;
+}
+
+.footer{
+  height: 303px;
+  background: #414141;
+  margin: 0;
+  font-size: 0;
+}
+
+.footer .footer_box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 90px 0;
+}
+
+.footer .footer_box .copyright{
+  width: 564px;
+  font-size: 15px;
+  color: #A2A2A2;
+  line-height: 160%;
+}
+.footer .footer_box .copyright span{ font-size: 18px; }
+
+.footer .footer_box .bank{ width: 170px; }
+
+.footer .footer_box .footer_iconbox{
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.footer .footer_box .footer_iconbox .insta_icon1,
+.footer .footer_box .footer_iconbox .insta_icon2{
+  width: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer .footer_box .footer_iconbox .insta_icon1 img,
+.footer .footer_box .footer_iconbox .insta_icon2 img{ width: 100%; }
+
+.footer .footer_box .footer_iconbox .insta_icon1 span,
+.footer .footer_box .footer_iconbox .insta_icon2 span{
+  font-size: 13px;
+  color: #a2a2a2;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* =========================================================
+   SUB PAGES (SUB1 ~ SUB6) 공통 통일
+   - sub2_title / sub_title_wrap 둘 다 지원
+   - 상단 초록 테두리 박스(sub_title) 통일
+   - 세로선+큰제목(sub1_titlebox 계열) 통일
+========================================================= */
+
+/* 1) 서브 타이틀 래퍼 */
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) :is(.sub2_title,.sub_title_wrap){
+  width: 100%;
+  margin: 0 auto;
+  padding: 130px 30px 0;  /* ✅ 상단 여백 여기서만 */
+  box-sizing: border-box;
+  margin-bottom: 130px;   /* ✅ sub_title 아래 공통 띄움 */
+}
+
+/* 2) 상단 테두리 타이틀 박스 */
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .sub_title{
+  width: 100%;
+  max-width: 1320px;
+  height: 66px;
+  margin: 0 auto;
+  padding: 0;
+  border: 2px solid var(--accent);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+
+  box-sizing: border-box;
+}
+
+/* 3) 세로선 + 큰 제목 통일
+   - 페이지마다 class가 sub1/sub3로 섞여있어도 먹게 묶음 */
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) :is(.sub1_titlebox,.sub3_titlebox){
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 90px 0;
+  box-sizing: border-box;
+}
+
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+:is(.sub1_titlebox,.sub3_titlebox)
+:is(.sub1_section_line,.sub3_section_line){
+  width: 1px;
+  height: 89px;
+  background: var(--line);
+  flex: 0 0 1px;
+}
+
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6)
+:is(.sub1_titlebox,.sub3_titlebox)
+:is(.sub1_section_title,.sub3_section_title){
+  width: auto;
+  margin-left: 80px;  /* ✅ 요청값 */
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 140%;
+  color: var(--accent);
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+/* 4) grid 하단 여백 과다 원인 제거(있을 때만) */
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) :is(.t_desc, .section3_grid){
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* =========================
+   TABLET (<=1024)
+========================= */
+@media (max-width: 1024px){
+
+  .header{
+    padding: 0 24px;
+  }
+
+  .section1,
+  .section2,
+  .section3{
+    padding: 0 24px;
+  }
+
+  .section_middle_line{
+    padding: 0 24px;
+  }
+  .section_middle_line::before{
+    left: 24px;
+    right: 24px;
+  }
+
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) :is(.sub2_title,.sub_title_wrap){
+    padding: 96px 24px 0;   /* ✅ fixed header 기준 */
+    margin-bottom: 90px;
+  }
+
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) :is(.sub1_titlebox,.sub3_titlebox)
+  :is(.sub1_section_title,.sub3_section_title){
+    margin-left: clamp(20px, 5vw, 80px);
+    font-size: clamp(20px, 4vw, 32px);
+  }
+
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) :is(.sub1_titlebox,.sub3_titlebox)
+  :is(.sub1_section_line,.sub3_section_line){
+    height: clamp(56px, 9vw, 89px);
+  }
+}
+
+/* =========================
+   MOBILE (<=480)
+========================= */
+@media (max-width: 480px){
+
+  body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .sub_title{
+    height: 54px;
+    font-size: 18px;
+  }
+
+  .footer .footer_box{
+    padding: 60px 0;
+  }
+}
+
+/* =========================================
+   모바일
+========================================= */
+
+@media (max-width:480px){
+
+.sub1 .sub1_titlebox,
+.sub2 .sub1_titlebox,
+.sub3 .sub1_titlebox,
+.sub4 .sub1_titlebox,
+.sub5 .sub1_titlebox,
+.sub6 .sub1_titlebox{
+
+  padding:0 18px !important;
+  gap:12px !important;
+  margin-bottom:22px !important;
+
+}
+
+
+.sub1 .sub1_section_line,
+.sub2 .sub1_section_line,
+.sub3 .sub1_section_line,
+.sub4 .sub1_section_line,
+.sub5 .sub1_section_line,
+.sub6 .sub1_section_line{
+
+  height:44px !important;
+
+}
+
+
+.sub1 .sub1_section_title,
+.sub2 .sub1_section_title,
+.sub3 .sub1_section_title,
+.sub4 .sub1_section_title,
+.sub5 .sub1_section_title,
+.sub6 .sub1_section_title{
+
+  font-size:20px !important;
+  letter-spacing:0px !important;
+
+}
+
+}
+
+
+/* sub1 ~ sub6 콘텐츠 시작 부분 위 간격 */
+.sub1 .section1,
+.sub2 .section1,
+.sub3 .section1,
+.sub4 .section1,
+.sub5 .section1,
+.sub6 .section1 {
+  margin-top: 130px !important;
+
+}
+
+/* =========================================
+   SUB1 ~ SUB6 타이틀 박스 왼쪽 정렬 통일
+   - 초록색 빈 공간 제거
+   - 세로선 + 제목을 섹션 시작선에 붙임
+   - 다른 레이아웃 영향 없음
+========================================= */
+
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .sub1_titlebox,
+body:is(.sub1,.sub2,.sub3,.sub4,.sub5,.sub6) .sub3_titlebox{
+
+  width: fit-content !important;   /* 100% 폭 제거 */
+  padding-left: 0 !important;      /* 과도한 왼쪽 패딩 제거 */
+  margin-left: 0 !important;       /* auto 정렬 제거 */
+
+  display: inline-flex !important; /* 내용만큼만 차지 */
+}
+
+
+
+
+.on-screen{
+  opacity:0;
+  transform: translateY(70px);
+  transition:1s;
+}
+
+.on-screen.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+
+
+
+/* =========================
+   HAMBURGER CORE (공통 최종)
+========================= */
+
+/* 버튼 */
+.hamburger_btn{
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+
+/* 3줄 아이콘 */
+.hamburger_icon{
+  position: relative;
+  width: 24px;
+  height: 18px;
+  display: inline-block;
+}
+
+.hamburger_icon .bar{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 999px;
+  transition: transform 240ms ease, top 240ms ease, opacity 180ms ease;
+}
+
+.hamburger_icon .bar:nth-child(1){ top: 0; }
+.hamburger_icon .bar:nth-child(2){ top: 8px; }
+.hamburger_icon .bar:nth-child(3){ top: 16px; }
+
+/* X 변신 */
+.hamburger_btn.is-active .bar:nth-child(1){
+  top: 8px;
+  transform: rotate(45deg);
+}
+.hamburger_btn.is-active .bar:nth-child(2){
+  opacity: 0;
+}
+.hamburger_btn.is-active .bar:nth-child(3){
+  top: 8px;
+  transform: rotate(-45deg);
+}
+
+/* 메뉴 패널 기본(닫힘) */
+.header .hamburger .mobile_menu{
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  will-change: transform;
+}
+
+/* 열림 */
+body.menu-open .header .hamburger .mobile_menu{
+  transform: translateX(0);
+}
+
+/* 딤(검은 배경) */
+body.menu-open::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+}
+
+
+
+
+#topBtn{
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 0;
+
+  background: #185c67;
+  color: #fff;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,.2);
+
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+
+  transition: .25s ease;
+  z-index: 99999;
+}
+
+#topBtn.show{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#topBtn:hover{
+  background: #319EA3;
+}
+
