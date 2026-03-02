@@ -1111,3 +1111,45 @@
     z-index: 10020 !important;
   }
 }
+
+
+
+
+/* TOP 버튼: iOS/모바일 최종 고정 */
+#topBtn{
+  position: fixed !important;
+  right: 15px;
+  bottom: 25px;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+
+  background: #185c67;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  z-index: 200000 !important; /* 네 헤더/딤보다 무조건 위 */
+  transform: translateZ(0);   /* iOS fixed 안정화 */
+  -webkit-transform: translateZ(0);
+}
+
+#topBtn.show{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+
+

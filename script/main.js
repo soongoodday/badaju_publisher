@@ -52,47 +52,59 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* =========================
-     2. TOP 버튼 (모바일 포함)
-  ========================= */
+/* =========================
+   2. TOP 버튼 (iPhone 확정판)
+========================= */
 
-  const topBtn = document.getElementById('topBtn');
+const topBtn = document.getElementById('topBtn');
 
-  if(topBtn){
+if (topBtn) {
 
-    const getScrollTop = () =>
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0;
+  // ✅ 스크롤값을 여러 경로에서 합쳐서 iOS에서도 잡히게
+  const getY = () => {
+    const y1 = window.scrollY || 0;
+    const y2 = document.documentElement?.scrollTop || 0;
+    const y3 = document.body?.scrollTop || 0;
+    const y4 = document.scrollingElement?.scrollTop || 0;
+    return Math.max(y1, y2, y3, y4);
+  };
 
-    const toggleTopBtn = () => {
+  const showIfNeeded = () => {
+    const y = getY();
+    if (y > 120) topBtn.classList.add('show');
+    else topBtn.classList.remove('show');
+  };
 
-      const y = getScrollTop();
+  // ✅ iOS에서 window만으로 부족할 때가 있어서 전부 걸어둠
+  window.addEventListener('scroll', showIfNeeded, { passive: true });
+  document.addEventListener('scroll', showIfNeeded, { passive: true, capture: true });
+  window.addEventListener('touchmove', showIfNeeded, { passive: true });
+  window.addEventListener('resize', showIfNeeded);
 
-      // 모바일에서도 보이게 낮춤
-      if(y > 120)
-        topBtn.classList.add('show');
-      else
-        topBtn.classList.remove('show');
+  // ✅ 혹시 "컨테이너 스크롤" 구조면, 스크롤 가능한 요소들에도 리스너를 붙임(핵심)
+  const bindScrollable = () => {
+    const els = document.querySelectorAll('body *');
+    for (const el of els) {
+      const st = getComputedStyle(el);
+      if (st.overflowY === 'auto' || st.overflowY === 'scroll') {
+        if (el.scrollHeight > el.clientHeight + 2) {
+          el.addEventListener('scroll', showIfNeeded, { passive: true });
+        }
+      }
+    }
+  };
+  bindScrollable();
 
-    };
+  // 초기 상태
+  showIfNeeded();
 
-    window.addEventListener(
-      'scroll',
-      toggleTopBtn,
-      {passive:true}
-    );
-
-    toggleTopBtn();
-
-    topBtn.addEventListener('click',()=>{
-      window.scrollTo({
-        top:0,
-        behavior:'smooth'
-      });
-    });
-
-  }
+  topBtn.addEventListener('click', () => {
+    // iOS 안전: 여러 루트에 같이 적용
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.documentElement.scrollTo?.({ top: 0, behavior: 'smooth' });
+    document.body.scrollTo?.({ top: 0, behavior: 'smooth' });
+    document.scrollingElement?.scrollTo?.({ top: 0, behavior: 'smooth' });
+  });
+}
 
 });
