@@ -1153,3 +1153,31 @@
 
 
 
+/* =========================
+   SUB1: fixed header에 visual이 가려지는 문제 - 강제 해결
+========================= */
+@media screen and (max-width: 480px){
+
+  /* ✅ 1) sub1에서 visual을 헤더 높이만큼 아래로 내리기 */
+  body.sub1 .visual,
+  .sub1 .visual{
+    margin-top: 70px !important;      /* header 높이 */
+    padding-top: 0 !important;
+  }
+
+  /* ✅ 2) visual이 absolute/fixed/top으로 붙어있으면 흐름으로 되돌리기 */
+  body.sub1 .visual,
+  .sub1 .visual{
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;       /* transform 있으면 fixed처럼 겹침 이슈 자주남 */
+  }
+
+  /* ✅ 3) 이미지가 블록으로 정상 높이 잡히게 */
+  body.sub1 .visual img,
+  .sub1 .visual img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
