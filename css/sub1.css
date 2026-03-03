@@ -356,6 +356,7 @@
 .sub1 .section1 .sub1_section_title,
 .sub1 .section2 .sub1_section_title{
   margin: 0 !important;
+  margin-left: 18px !important;
 }
 
 /* 4) 본문(오른쪽 컬럼)도 시작점이 내려가지 않게 ul 기본 여백 제거 */
